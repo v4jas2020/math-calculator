@@ -1,10 +1,69 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equations - Math Calculator</title>
 </head>
 <body>
+
+    <header>
+        <h1>Quadratic Equation Solver</h1>
+        <a href="../index.html">Back to calculators</a>
+    </header>
+
+    <hr>
+
+    <main>
+        <h2>Enter your equation</h2>
+
+        <p>General form: ax<sup>2</sup> + bx + c = 0</p>
+
+        <form id="quadratic-form">
+            <label for="equation">Equation:</label>
+
+            <input
+                type="text"
+                id="equation"
+                name="equation"
+                placeholder="2x^2 - 5x + 2 = 0"
+                size="40"
+                required
+            >
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <p>Supports full and incomplete quadratic equations.</p>
+
+        <h3>Examples</h3>
+        <ul>
+            <li>2x^2 - 5x + 2 = 0</li>
+            <li>x^2 - 9 = 0</li>
+            <li>3x^2 + 6x = 0</li>
+            <li>x^2 = 5x - 3</li>
+        </ul>
+
+        <hr>
+
+        <section id="solution" aria-live="polite">
+            <h2>Step-by-step solution</h2>
+
+            <div id="solution-steps">
+                <p>Enter an equation to see the solution.</p>
+            </div>
+
+            <h3>Final Answer</h3>
+            <div id="final-answer"></div>
+        </section>
+
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/render-steps.js"></script>
+    <script src="../js/calculator.js"></script>
+    <script src="../js/app.js"></script>
 
 </body>
 </html>
