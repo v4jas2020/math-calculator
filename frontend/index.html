@@ -2,9 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <title>Math Calculator</title>
 </head>
-<body>
 
+<body>
+<header>
+    <h1>Math Calculator</h1>
+</header>
+<main>
+    <section id = "home">
+        <h2>Select a calculator</h2>
+
+        <table border="1" cellpadding="12" cellspacing="0">
+            <tbody>
+            <tr>
+                <td>Combine Like Terms (Coming soon)</td>
+                <td>Add and Subtract Expressions (Coming soon)</td>
+            </tr>
+            <tr>
+                <td>Fractions (Coming soon)<td>
+                <td>Expand Brackers (Coming soon)</td>
+            </tr>
+            <tr>
+                <td>Factorise Expressions (Coming soon)</td>
+                <td> Linear Equations (Coming soon) </td>
+            </tr>
+            <tr>
+                <td>Powers and Roots (Coming soon)</td>
+                <td>Percentages (Coming soon)</td>
+            </tr>
+            <tr>
+                <td>Geometry Formulas (Coming soon)</td>
+            <td>
+                <a href="#quadratic-calculator">
+                    Quadratic Equations
+                </a>
+            </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+<section id="quadratic-calculator">
+    <h2>Quadratic Equation Solver</h2>
+    <p>
+
+    </p>
+
+    <p>
+        General form:
+        ax<sup>2</sup> + bx + c = 0
+    </p>
+
+    <form id="quadratic-form">
+        <label for="equation">
+            Enter your equation:
+        </label>
+        <br><br>
+        <input
+            type="text"
+            id-="equation"
+            name="equation"
+            placeholder="e.g. 2x^2 - 5x +2 = 0"
+            size="35"
+            required
+            >
+        <button type="submit">Calculate</button>
+    </form>
+    <ul>
+        <li>2x^2 - 5x + 2 = 0</li>
+        <li>x^2 - 9 = 0</li>
+        <li>3x^2 + 6x = 0</li>
+        <li>x^2 = 5x - 3x</li>
+    </ul>
+    <hr>
+
+    <section id="solution" aria-live="polite">
+        <h3>Step-by-step solution</h3>
+        <div id="solution-steps">
+            <p>
+                Enter an equation and click Calculate.
+            </p>
+        </div>
+        <div id="final-answer"></div>
+    </section>
+
+    <p><a href="#home"> Back to calculators</a></p>
+</section>
+</main>
+<script src="js/api.js"></script>
+<script src="js/render-steps.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/app.js "></script>
 </body>
 </html>
