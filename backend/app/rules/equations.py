@@ -216,7 +216,62 @@ def parse_expression(text):
                         rf"\sqrt{{{tex(sqrt_d)}}} = {tex(sqrt_d)}",
                         "Leave imperfect roots as radicals never round decimals."
                     )
+                    denominator = sp.expand(2 * a)
+                    roots = []
 
+                    for number, sign in enumerate((-1, 1), start=1):
+                        operator = "-" if sign == -1 else "+"
+                        step(
+                            f"Root {number}: formula",
+                            rf"x_{number} = "
+                            rf"\frac{{-b {operator} \sqrt{{D}}}}{{2a}}"
+                        )
+                        step(
+                            f"Root {number}: evaluate signs",
+                            rf"x_{number} = "
+                            rf"\frac{{{tex(-b)} {operator} {tex(sqrt_d)}}}"
+                            rf"{{{tex(denominator)}}}"
+                        )
+                        numerator = sp.expand(-b + sign * sqrt_d)
+                        step(
+                            f"Root {number} = "
+                            rf"x_{number} = "
+                            rf"\frac{{{tex(numerator)}}}"
+                            rf"{{{tex(denominator)}}}"
+                        )
+                        root = sp.cancel(numerator / denominator)
+                        if root.has(sp.sqrt(d)) and d != 0:
+                            root = sp.together(root)
+                        roots.append(root)
+                        step(
+                            f"Root {number}: exact answer"
+                            rf"x {number} = {tex(root)}",
+                            "Keep the exact fractions and radicals."
+                        )
+
+                        if d == 0
+                            final = rf"x_1 = x_2 = {tex(roots[0])}"
+                        else:
+                            final = (
+                                rf"x_1 = {tex(roots[0])}, \quad "
+                                rf"x_2 = {tex(roots[1])}"
+                            )
+                        step(
+                            "Final answer",
+                            final
+                        )
+                        return {
+                            "type": kind,
+                            "coefficients": {
+                                "a": str(a),
+                                "b": str(b),
+                                "c": str(c),
+                            },
+                            "discriminant": str(d),
+                            "steps": steps,
+                            "roots": [str(root) for root in roots],
+                            "final_answer_latex": final
+                        }
 
 
 
