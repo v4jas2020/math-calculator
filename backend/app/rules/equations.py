@@ -1,7 +1,27 @@
 import ast
+import operator
 import re
 
 import sympy as sp
+from pathlib import Path
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from app.routes.calculator import router
+
+app = FastAPI(title="Math Calculator")
+app.include_router(router)
+
+frontend_dir = (
+    Path(__file__).resolve().parent.parent / "frontend"
+)
+app.mount(
+    "/",
+    StaticFiles(
+        directory=str(frontend_dir),
+        html=True,
+),
+    name="frontend",
+)
 
 
 X = sp.Symbol("x")
@@ -166,32 +186,60 @@ def solve_quadratic(equation):
 
     denominator = sp.expand(2 * a)
     roots = []
-    signs = (-1,) if discriminant == 0 else (-1, 1)
-    for number, sign in enumerate(signs, start=1):
+    for number, sign in enumerate((-1, 1), start=1):
         operator = "-" if sign == -1 else "+"
+
         step(
             f"Root {number}: formula",
-            rf"x_{number} = \frac{{-b {operator} \sqrt{{D}}}}{{2a}}",
-        )
-        step(
-            f"Root {number}: evaluate signs",
-            rf"x_{number} = \frac{{{tex(-b)} {operator} {tex(sqrt_discriminant)}}}"
-            rf"{{{tex(denominator)}}}",
-        )
-        numerator = sp.expand(-b + sign * sqrt_discriminant)
-        root = sp.cancel(numerator / denominator)
-        roots.append(root)
-        step(
-            f"Root {number}: exact answer",
-            rf"x_{number} = {tex(root)}",
-            "Keep exact fractions and radicals.",
+            rf"x_{number} = "
+            rf"\frac{{-b {operator} \sqrt{{D}}}}{{2a}}"
         )
 
-    final = (
-        rf"x_1 = x_2 = {tex(roots[0])}"
-        if discriminant == 0
-        else rf"x_1 = {tex(roots[0])}, \quad x_2 = {tex(roots[1])}"
-    )
+        step(
+            f"Root {number}: substitute values",
+            rf"x_{number} = "
+            rf"\frac{{-\left({tex(b)}\right) {operator} "
+            rf"\sqrt{{{tex(discriminant)}}}}}"
+            rf"{{2\cdot\left({tex(a)}\right)}}"
+        )
+
+        step(
+            f"Root {number}: evaluate signs and denominator",
+            rf"x_{number} = "
+            rf"\frac{{{tex(-b)} {operator}"
+            rf"{tex(sqrt_discriminant)}}}"
+            rf"{{{tex(denominator)}}}"
+        )
+        numerator = sp.expand(-b + sign * sqrt_discriminant)
+
+        step(
+            f"Root {number}: simplify numerator",
+            rf"x_{number} = "
+            rf"\frac{{{tex(numerator)}}}"
+            rf"{{{tex(denominator)}}}"
+        )
+
+        root = sp.cancel(numerator / denominator)
+
+        if not any(
+                sp.simplify(root - existing) == 0
+                for existing in roots
+        ):
+            roots.append(root)
+
+        step(
+            f"Root {number}: exact answer",
+            rf"x_{number} = {tex(sp.together(root))}",
+            "Keep exact fractions and radicals."
+        )
+
+    if discriminant == 0:
+        final = rf"x_1 = x_2 = {tex(sp.together(roots[0]))}"
+    else:
+        final = (
+            rf"x_1 = {tex(sp.together(roots[0]))},\quad "
+            rf"x_2 = {tex(sp.together(roots[1]))}"
+        )
     step("Final answer", final)
     return {**result, "roots": [str(root) for root in roots], "final_answer_latex": final}
 
