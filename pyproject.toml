@@ -6,3 +6,6 @@ dependencies = [
     "fastapi>=0.162.0",
     "sympy>=1.14.0",
 ]
+
+[tool.vercel]
+entrypoint = "backend.main:app"

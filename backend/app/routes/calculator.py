@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field\
 
-from app.services.solver import solve_problem
+from ..services.solver import solve_problem
 router = APIRouter(prefix="/api")
 class CalculatorRequest(BaseModel):
     topic: str = Field(max_length=40)

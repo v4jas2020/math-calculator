@@ -2,7 +2,7 @@ async function requestSolution(topic, equation) {
  const response = await fetch("/api/calculate",{
      method: "POST",
      headers: {
-         "Constent-Type": "application/json"
+         "Content-Type": "application/json"
      },
      body: JSON.stringify({
          topic,

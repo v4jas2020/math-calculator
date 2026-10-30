@@ -1,5 +1,5 @@
 
-from app.rules.equations import solve_quadratic
+from ..rules.equations import solve_quadratic
 
 SOLVERS = {
     "quadratic": solve_quadratic

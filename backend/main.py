@@ -2,7 +2,7 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from app.routes.calculator import router
+from .app.routes.calculator import router
 
 app = FastAPI(title="Main calculator")
 app.include_router(router)

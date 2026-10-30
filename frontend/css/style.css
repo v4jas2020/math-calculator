@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    background: #fff;
+    color: #222;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+header,
+main {
+    padding: 1rem;
+}
+
+#equation {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+#solution-steps section {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+}
+
+#solution-steps h3 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+}
+
+#solution-steps section > div,
+#final-answer {
+    overflow-x: auto;
+    text-align: left;
+}
+
+#solution-steps p {
+    color: #666;
+    margin: 0.5rem 0 0;
+}
+
+mjx-container[display="true"] {
+    margin: 0.5rem 0 !important;
+    text-align: left !important;
+}
+
+#final-answer {
+    border-top: 1px solid #bbb;
+    padding: 0.75rem 0;
+}
+
+@media (max-width: 600px) {
+    header,
+    main {
+        padding: 0.75rem;
+    }
+}
