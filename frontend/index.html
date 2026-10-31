@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content ="width=device-width, initial-scale=1.0">
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-    <title>Math Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title data-i18n="homePageTitle">Math Calculator</title>
 </head>
 
 <body>
 <header>
-    <h1>Math Calculator</h1>
+    <div class="language-switcher">
+        <button type="button" data-language="en" aria-label="English">🇬🇧</button>
+        <button type="button" data-language="lt" aria-label="Lietuvių">🇱🇹</button>
+    </div>
+    <h1 data-i18n="mathCalculator">Math Calculator</h1>
 </header>
 <main>
     <section id = "home">
-        <h2>Select a calculator</h2>
+        <h2 data-i18n="selectCalculator">Select a calculator</h2>
 
         <table border="1" cellpadding="12" cellspacing="0">
             <tbody>
             <tr>
-                <td>Combine Like Terms (Coming soon)</td>
-                <td>Add and Subtract Expressions (Coming soon)</td>
+                <td data-i18n="combineLikeTerms">Combine Like Terms (Coming soon)</td>
+                <td data-i18n="addSubtractExpressions">Add and Subtract Expressions (Coming soon)</td>
             </tr>
             <tr>
-                <td>Fractions (Coming soon)<td>
-                <td>Expand Brakets (Coming soon)</td>
+                <td data-i18n="fractions">Fractions (Coming soon)<td>
+                <td data-i18n="expandBrackets">Expand Brakets (Coming soon)</td>
             </tr>
             <tr>
-                <td>Factorise Expressions (Coming soon)</td>
-                <td> Linear Equations (Coming soon) </td>
+                <td data-i18n="factoriseExpressions">Factorise Expressions (Coming soon)</td>
+                <td data-i18n="linearEquations"> Linear Equations (Coming soon) </td>
             </tr>
             <tr>
-                <td>Powers and Roots (Coming soon)</td>
-                <td>Percentages (Coming soon)</td>
+                <td data-i18n="powersRoots">Powers and Roots (Coming soon)</td>
+                <td data-i18n="percentages">Percentages (Coming soon)</td>
             </tr>
             <tr>
-                <td>Geometry Formulas (Coming soon)</td>
+                <td data-i18n="geometryFormulas">Geometry Formulas (Coming soon)</td>
             <td>
                 <a href="calculators/quadratic.html">
-                    Quadratic Equations
+                    <span data-i18n="quadraticEquations">Quadratic Equations</span>
                 </a>
             </td>
             </tr>
@@ -45,6 +50,7 @@
         </table>
     </section>
 </main>
+<script src="js/translations.js"></script>
 <script src="js/api.js"></script>
 <script src="js/render-steps.js"></script>
 <script src="js/calculator.js"></script>

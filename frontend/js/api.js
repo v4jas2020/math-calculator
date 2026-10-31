@@ -12,9 +12,9 @@ async function requestSolution(topic, equation) {
  const data = await response.json();
  if (!response.ok) {
      throw new Error(
-         typeof data.detail === "string"
-         ? data.detail
-             : "The calculation could not be completed"
+        typeof data.detail === "string"
+        ? t(data.detail)
+            : t("The calculation could not be completed")
      );
  }
  return data;

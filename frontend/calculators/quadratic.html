@@ -4,42 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadratic Equations - Math Calculator</title>
+    <title data-i18n="quadraticPageTitle">Quadratic Equations - Math Calculator</title>
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 
     <header>
-        <h1>Quadratic Equation Solver</h1>
-        <a href="../index.html">Back to calculators</a>
+        <div class="language-switcher">
+            <button type="button" data-language="en" aria-label="English">🇬🇧</button>
+            <button type="button" data-language="lt" aria-label="Lietuvių">🇱🇹</button>
+        </div>
+        <h1 data-i18n="quadraticSolver">Quadratic Equation Solver</h1>
+        <a href="../index.html" data-i18n="backToCalculators">Back to calculators</a>
     </header>
 
     <hr>
 
     <main>
-        <h2>Enter your equation</h2>
+        <h2 data-i18n="enterEquation">Enter your equation</h2>
 
-        <p>General form: ax<sup>2</sup> + bx + c = 0</p>
+        <p><span data-i18n="generalForm">General form:</span> ax<sup>2</sup> + bx + c = 0</p>
 
         <form id="quadratic-form">
-            <label for="equation">Equation:</label>
+            <label for="equation" data-i18n="equation">Equation:</label>
 
             <input
                 type="text"
                 id="equation"
                 name="equation"
                 placeholder="2x^2 - 5x + 2 = 0"
+                data-i18n-placeholder="equationPlaceholder"
                 size="40"
                 required
             >
 
-            <button type="submit">Calculate</button>
+            <button type="submit" data-i18n="calculate">Calculate</button>
         </form>
 
-        <p>Supports full and incomplete quadratic equations.</p>
+        <p data-i18n="supportsQuadratics">Supports full and incomplete quadratic equations.</p>
 
-        <h3>Examples</h3>
+        <h3 data-i18n="examples">Examples</h3>
         <ul>
             <li>2x^2 - 5x + 2 = 0</li>
             <li>x^2 - 9 = 0</li>
@@ -50,18 +55,19 @@
         <hr>
 
         <section id="solution" aria-live="polite">
-            <h2>Step-by-step solution</h2>
+            <h2 data-i18n="stepByStep">Step-by-step solution</h2>
 
             <div id="solution-steps">
-                <p>Enter an equation to see the solution.</p>
+                <p data-i18n="enterEquationToSee">Enter an equation to see the solution.</p>
             </div>
 
-            <h3>5) Final answer</h3>
+            <h3 data-i18n="finalAnswer">5) Final answer</h3>
             <div id="final-answer"></div>
         </section>
 
     </main>
 
+    <script src="../js/translations.js"></script>
     <script src="../js/api.js"></script>
     <script src="../js/render-steps.js"></script>
     <script src="../js/calculator.js"></script>

@@ -9,7 +9,7 @@ if (quadraticForm) {
             'button[type="submit"]'
         );
         button.disabled = true;
-        steps.textContent = "Calculating...";
+        steps.textContent = t("calculating");
         answer.textContent = "";
 
         try {
@@ -17,10 +17,10 @@ if (quadraticForm) {
                 "quadratic",
                 equation
             );
-            await renderSolution(result);
+            await renderSolution(result, equation);
         } catch (error) {
             steps.textContent =
-                error.message || "Calculation failed.";
+                error.message || t("calculationFailed");
         } finally {
             button.disabled = false;
         }

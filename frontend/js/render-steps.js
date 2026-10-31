@@ -1,5 +1,7 @@
+let lastSolution;
 
-async function renderSolution(result) {
+async function renderSolution(result, originalEquation) {
+    lastSolution = { result, originalEquation };
     const container = document.getElementById("solution-steps");
     const finalAnswer = document.getElementById("final-answer");
     await waitForMathJax();
@@ -21,10 +23,10 @@ async function renderSolution(result) {
         groups[getStepGroup(step.title)].push(step);
     }
     const groupTitles = {
-        setup: "1) Rearrange and identify coefficients",
-        discriminant: "2) Discriminant",
-        root1: "3) First root",
-        root2: "4) Second root"
+        setup: t("groupSetup"),
+        discriminant: t("groupDiscriminant"),
+        root1: t("groupRoot1"),
+        root2: t("groupRoot2")
     };
     for (const groupName of Object.keys(groups)) {
         if (!groups[groupName].length) {
@@ -37,6 +39,12 @@ async function renderSolution(result) {
         section.appendChild(title);
         const lines = document.createElement("div");
         lines.className = "solution-lines";
+        if (groupName === "setup") {
+            const original = document.createElement("div");
+            original.className = "original-equation";
+            original.textContent = originalEquation || result.equation;
+            lines.appendChild(original);
+        }
         for (const step of groups[groupName]) {
             const line = document.createElement("div");
             line.className = "solution-line";
@@ -45,7 +53,7 @@ async function renderSolution(result) {
             line.appendChild(maths);
             if (step.explanation) {
                 const explanation = document.createElement("p");
-                explanation.textContent = step.explanation;
+                explanation.textContent = t(step.explanation);
                 line.appendChild(explanation);
             }
             lines.appendChild(line);
@@ -53,8 +61,10 @@ async function renderSolution(result) {
         section.appendChild(lines);
         container.appendChild(section);
     }
-    finalAnswer.textContent =
-        "\\[" + result.final_answer_latex + "\\]";
+    const finalAnswerLatex = result.final_answer_latex === "\\text{No real roots}"
+        ? "\\text{" + t("noRealRoots") + "}"
+        : result.final_answer_latex;
+    finalAnswer.textContent = "\\[" + finalAnswerLatex + "\\]";
     try {
         await window.MathJax.typesetPromise([
             container,
@@ -63,7 +73,7 @@ async function renderSolution(result) {
     } catch (error) {
         container.replaceChildren();
         finalAnswer.replaceChildren();
-        throw new Error("Mathematical notation could not be rendered.");
+        throw new Error(t("Mathematical notation could not be rendered."));
     }
 }
 
@@ -95,9 +105,9 @@ function waitForMathJax() {
             if (window.MathJax && window.MathJax.typesetPromise) {
                 resolve();
             } else if (Date.now() >= deadline) {
-                reject(new Error(
-                    "Mathematical notation could not be loaded. Please try again."
-                ));
+                    reject(new Error(t(
+                        "Mathematical notation could not be loaded. Please try again."
+                    )));
             } else {
                 window.setTimeout(check, 50);
             }
@@ -105,3 +115,9 @@ function waitForMathJax() {
         check();
     });
 }
+
+document.addEventListener("languagechange", () => {
+    if (lastSolution) {
+        renderSolution(lastSolution.result, lastSolution.originalEquation);
+    }
+});
