@@ -3,14 +3,14 @@ import operator
 import re
 
 import sympy as sp
-
+from sympy.integrals.manualintegrate import parts_rule
 
 X = sp.Symbol("x")
 TOKENS = re.compile(r"\d+(?:\.\d+)?|x|[()+\-*/^]")
 ALLOWED_POWERS = (sp.Integer(0), sp.Integer(1), sp.Integer(2))
 
 
-def parse_expression(text):
+def parse_expression(text, preserve=False):
     if not isinstance(text, str):
         raise ValueError("Enter a valid expression")
 
@@ -49,33 +49,77 @@ def parse_expression(text):
             return sp.Rational(str(node.value))
         if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
             value = read(node.operand)
-            return value if isinstance(node.op, ast.UAdd) else -value
+            if isinstance(node.op, ast.UAdd):
+                return value
+            if preserve:
+                return sp.Mul(-1, value, evaluate=False)
+            return -value
         if isinstance(node, ast.BinOp):
             left = read(node.left)
             right = read(node.right)
 
             if isinstance(node.op, ast.Add):
+                if preserve:
+                    return sp.Add(left, right, evaluate=False)
                 return left + right
             if isinstance(node.op, ast.Sub):
+                if preserve:
+                    return sp.Add(
+                        left,
+                        sp.Mul(-1, right, evaluate=False),
+                        evaluate=False
+                    )
                 return left - right
             if isinstance(node.op, ast.Mult):
+                if preserve:
+                    return sp.Mul(left, right, evaluate=False)
                 return left * right
             if isinstance(node.op, ast.Div):
                 if right == 0 or right.has(X):
                     raise ValueError("Division must not be by zero or contain x")
+                if preserve:
+                    return sp.Mul(
+                        left,
+                        sp.Pow(right, -1, evaluate=False),
+                        evaluate=False
+                    )
                 return left / right
             if isinstance(node.op, ast.Pow):
                 if right not in ALLOWED_POWERS:
                     raise ValueError(
                         "Only powers 0, 1 and 2 are allowed for quadratic equations."
                     )
+                if preserve:
+                    return sp.Pow(left, int(right), evaluate=False)
                 return left ** int(right)
 
         raise ValueError("Unsupported operation/expression")
 
-    return sp.expand(read(tree))
+    expression = read(tree)
+    return expression if preserve else sp.expand(expression)
 
-
+def distribute_once(expr):
+    if expr.is_Add:
+        parts = [distribute_once(term) for term in expr.args]
+        return sp.Add(*parts, evaluate=False)
+    if expr.is_Pow and expr.exp == 2 and expr.base.is.Add:
+        return sp.Mul(expr.base, expr.base, evaluate=False)
+    if expr.is_Mul:
+        factors = list(expr.args)
+        for index, factor in enumerate(factors):
+            if factor.is_Add:
+                terms = []
+                for term in factor.args:
+                    new_factors = (
+                        factors[:index]
+                        + [term]
+                        + factors[index + 1:]
+                    )
+                    terms.append(
+                        sp.Mul(*new_factors, evaluate=False)
+                    )
+                    return sp.Add(*terms, evaluate=False)
+                return expr
 def solve_quadratic(equation):
 
     if not isinstance(equation, str) or equation.count("=") != 1:
@@ -104,6 +148,23 @@ def solve_quadratic(equation):
         )
 
     step("Original equation", rf"{tex(lhs)} = {tex(rhs)}")
+    lhs_work = parse_expression(lhs_text, preserve=True)
+    rhs_work = parse_expression(rhs_text, preserve=True)
+
+    for _ in range(6)
+        next_lhs = distribute_once(lhs_work)
+        next_rhs = distribute_once(rhs_work)
+
+        if next_lhs == lhs_work and next_rhs == rhs_work:
+            break
+        step(
+            "Expand brackets",
+            rf"{tex(next_lhs, mul_symbol='dot')} = "
+            rf"{tex(next_rhs, mul_symbol='dot')}"
+        )
+
+        lhs_work = next_lhs
+        rhs_work = next_lhs
     if rhs != 0:
         step(
             "Move all terms to the left",
