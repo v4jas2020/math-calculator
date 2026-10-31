@@ -102,7 +102,7 @@ def distribute_once(expr):
     if expr.is_Add:
         parts = [distribute_once(term) for term in expr.args]
         return sp.Add(*parts, evaluate=False)
-    if expr.is_Pow and expr.exp == 2 and expr.base.is.Add:
+    if expr.is_Pow and expr.exp == 2 and expr.base.is_Add:
         return sp.Mul(expr.base, expr.base, evaluate=False)
     if expr.is_Mul:
         factors = list(expr.args)
@@ -118,8 +118,8 @@ def distribute_once(expr):
                     terms.append(
                         sp.Mul(*new_factors, evaluate=False)
                     )
-                    return sp.Add(*terms, evaluate=False)
-                return expr
+                return sp.Add(*terms, evaluate=False)
+    return expr
 def solve_quadratic(equation):
 
     if not isinstance(equation, str) or equation.count("=") != 1:
@@ -151,7 +151,7 @@ def solve_quadratic(equation):
     lhs_work = parse_expression(lhs_text, preserve=True)
     rhs_work = parse_expression(rhs_text, preserve=True)
 
-    for _ in range(6)
+    for _ in range(6):
         next_lhs = distribute_once(lhs_work)
         next_rhs = distribute_once(rhs_work)
 
@@ -164,7 +164,7 @@ def solve_quadratic(equation):
         )
 
         lhs_work = next_lhs
-        rhs_work = next_lhs
+        rhs_work = next_rhs
     if rhs != 0:
         step(
             "Move all terms to the left",
