@@ -113,13 +113,13 @@ def solve_quadratic(equation):
     step(
         "Collect and reorder terms",
         rf"{tex(difference)} = 0",
-        "Write the x² term first, then x, then the constant.",
+
     )
     step("Standard form", r"ax^2 + bx + c = 0")
     step(
         "Insert all coefficients",
         _coefficient_form(a, b, c, tex),
-        "Keep zero coefficients visible for incomplete equations.",
+
     )
     step(
         "Identify coefficients",
@@ -162,7 +162,7 @@ def solve_quadratic(equation):
     step(
         "Take the exact square root",
         rf"\sqrt{{D}} = \sqrt{{{tex(discriminant)}}} = {tex(sqrt_discriminant)}",
-        "Leave imperfect roots as radicals; do not round decimals.",
+
     )
 
     denominator = sp.expand(2 * a)
@@ -211,7 +211,7 @@ def solve_quadratic(equation):
         step(
             f"Root {number}: exact answer",
             rf"x_{number} = {tex(sp.together(root))}",
-            "Keep exact fractions and radicals."
+
         )
 
     if discriminant == 0:
