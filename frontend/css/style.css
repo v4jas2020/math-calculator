@@ -349,3 +349,29 @@ header h1 {
         grid-template-columns: minmax(0, 1fr);
     }
 }
+.calculator-table td.calculator-table-available{
+    padding: 0;
+    overflow: hidden;
+}
+.calculator-link {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 66px;
+    padding: 18px 22px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #2659a5;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: inherit;
+}
+.calculator-link:hover{
+    background: #e8f1ff;
+    text-decoration: none;
+}
+.calculator-link:focus-visible {
+    outline: 3px solid #2659a5;
+    outline-offset: -3px;
+}
