@@ -49,7 +49,32 @@ async function renderSolution(result, originalEquation, originalLatex = null) {
             }
             lines.appendChild(original);
         }
+        const shownEquations = new Set();
+        if (groupName === "setup") {
+            const firstEquation =
+                originalLatex || originalEquation || result.equation;
+
+            if (firstEquation) {
+                shownEquations.add(normalizeEquation(firstEquation));
+            }
+        }
         for (const step of groups[groupName]) {
+            if (
+                groupName === "setup" &&
+                [
+                    "Original equation",
+                    "Standard form",
+                    "Insert all coefficients"
+                ].includes(step.title)
+            ) {
+                continue;
+            }
+            const normalized = normalizeEquation(step.latex);
+
+            if (shownEquations.has(normalized)) {
+                continue;
+            }
+            shownEquations.add(normalized);
             const line = document.createElement("div");
             line.className = "solution-line";
             const maths = document.createElement("div");
@@ -61,16 +86,6 @@ async function renderSolution(result, originalEquation, originalLatex = null) {
                 line.appendChild(explanation);
             }
             lines.appendChild(line);
-            if (
-                groupName === "setup" &&
-                (
-                    step.title === "Original equation" ||
-                    step.title === "Standard form" ||
-                    step.title === "Insert all coefficients"
-                )
-            ) {
-                continue;
-            }
         }
         section.appendChild(lines);
         container.appendChild(section);
@@ -90,7 +105,14 @@ async function renderSolution(result, originalEquation, originalLatex = null) {
         throw new Error(t("Mathematical notation could not be rendered."));
     }
 }
-
+function normalizeEquation(latex) {
+    return String(latex || "")
+        .replace(/\\left|\\right/g, "")
+        .replace(/\\(?:cdot|times)/g, "")
+        .replace(/\^\{(\d+)\}/g, "^$1")
+        .replace(/\\[,;!]/g, "")
+        .replace(/\s+/g, "")
+}
 function getStepGroup(title) {
     if (title.startsWith("Root 1:")) {
         return "root1";

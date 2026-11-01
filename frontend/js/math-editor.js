@@ -43,7 +43,7 @@ function latexToEquation(latex) {
                 const numerator = readGroup();
                 const denominator = readGroup();
 
-                output += `(${numerator})//(${denominator})`;
+                output += `(${numerator})/(${denominator})`;
             } else if (source[position] === "{") {
                 position++;
                 output += `(${parseUntil("}")})`;

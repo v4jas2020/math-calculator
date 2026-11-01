@@ -1,5 +1,19 @@
 const quadraticForm = document.getElementById("quadratic-form");
 if (quadraticForm) {
+    const mathEditor = document.getElementById("equation");
+    mathEditor.addEventListener("keydown", (event) => {
+        if (
+            event.key === "Enter" &&
+            !event.shiftKey &&
+            !event.isComposing
+        ) {
+            event.preventDefault();
+            event.stopPropagation();
+            const submitButton = quadraticForm.querySelector(
+                'button[type="submit"]'
+            );
+        }
+    }, true);
     quadraticForm.addEventListener("submit", async (event) => {
         event.preventDefault();
         const editor = document.getElementById("equation");
