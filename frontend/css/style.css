@@ -103,3 +103,35 @@ mjx-container[display="true"] {
         grid-column: auto;
     }
 }
+
+#equation {
+    display: block;
+    width: 100%;
+    max-width: 620px;
+    min-height: 52px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    backround: #fff;
+    font-size: 22px;
+    box-sizing: border-box;
+}
+.math-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-width: 620px;
+    margin: 10px 0 16px;
+}
+.math-toolbar button {
+    min-width: 42px;
+    min-height: 38px;
+    padding: 7px 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    color: #222;
+    font-size: 17px;
+    cursor: pointer;
+}

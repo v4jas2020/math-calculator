@@ -1,7 +1,7 @@
 let lastSolution;
 
-async function renderSolution(result, originalEquation) {
-    lastSolution = { result, originalEquation };
+async function renderSolution(result, originalEquation, originalLatex = null) {
+    lastSolution = { result, originalEquation, originalLatex };
     const container = document.getElementById("solution-steps");
     const finalAnswer = document.getElementById("final-answer");
     await waitForMathJax();
@@ -42,7 +42,11 @@ async function renderSolution(result, originalEquation) {
         if (groupName === "setup") {
             const original = document.createElement("div");
             original.className = "original-equation";
-            original.textContent = originalEquation || result.equation;
+            if (originalLatex) {
+                original.textContent = "\\[" + originalLatex + "\\]";
+            } else {
+                original.textContent = originalEquation || result.equation;
+            }
             lines.appendChild(original);
         }
         for (const step of groups[groupName]) {
@@ -57,6 +61,16 @@ async function renderSolution(result, originalEquation) {
                 line.appendChild(explanation);
             }
             lines.appendChild(line);
+            if (
+                groupName === "setup" &&
+                (
+                    step.title === "Original equation" ||
+                    step.title === "Standard form" ||
+                    step.title === "Insert all coefficients"
+                )
+            ) {
+                continue;
+            }
         }
         section.appendChild(lines);
         container.appendChild(section);
@@ -118,6 +132,10 @@ function waitForMathJax() {
 
 document.addEventListener("languagechange", () => {
     if (lastSolution) {
-        renderSolution(lastSolution.result, lastSolution.originalEquation);
+        renderSolution(
+            lastSolution.result,
+            lastSolution.originalEquation,
+            lastSolution.originalLatex
+        );
     }
 });

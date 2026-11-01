@@ -32,6 +32,8 @@ const translations = {
         groupDiscriminant: "2) Discriminant",
         groupRoot1: "3) First root",
         groupRoot2: "4) Second root",
+        invalidMathExpression: "Incomplete or unsupported mathematical expression.",
+        mathEditorLoading: "The maths editor is still loading. Please try again.",
         noRealRoots: "No real roots",
         "Subtract the entire right-hand side from both sides.":
             "Subtract the entire right-hand side from both sides.",
@@ -97,6 +99,8 @@ const translations = {
         groupDiscriminant: "2) Diskriminantas",
         groupRoot1: "3) Pirmoji šaknis",
         groupRoot2: "4) Antroji šaknis",
+        invalidMathExpression: "Nebaigtas arba nepalaikomas matematinis reiškinys.",
+        mathEditorLoading: "Matematinis redaktorius dar įkeliamas. Bandykite dar kartą.",
         noRealRoots: "Realiųjų šaknų nėra",
         "Subtract the entire right-hand side from both sides.":
             "Atimame visą dešinę lygties pusę iš abiejų pusių.",
