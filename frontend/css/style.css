@@ -135,3 +135,22 @@ mjx-container[display="true"] {
     font-size: 17px;
     cursor: pointer;
 }
+.site-footer {
+    margin-top: 60px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+.site-footer p {
+    margin: 5px 0;
+}
+.size-footer a {
+    color: #333;
+    text-decoration: underline;
+}
+.site-footer a:hover {
+    color: #0070f3
+}
+
