@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel, Field\
+from pydantic import BaseModel, Field
 
 from ..services.solver import solve_problem
 router = APIRouter(prefix="/api")

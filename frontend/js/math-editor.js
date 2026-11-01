@@ -43,7 +43,7 @@ function latexToEquation(latex, allowRoots = false) {
                 const numerator = readGroup();
                 const denominator = readGroup();
 
-                output += `(${numerator})/(${denominator})`;
+                output += `((${numerator})/(${denominator}))`;
             } else if (allowRoots && source.startsWith("\\sqrt", position)) {
                 position += 5;
                 output += `sqrt(${readGroup()})`;
@@ -62,6 +62,9 @@ function latexToEquation(latex, allowRoots = false) {
         return output;
     }
     function readGroup() {
+        if (/^[0-9]$/.test(source[position] || "")) {
+            return source[position++];
+        }
         if (source[position] !== "{") {
             throw new Error(t("invalidMathExpression"));
         }
@@ -75,3 +78,4 @@ function latexToEquation(latex, allowRoots = false) {
     }
     return parseUntil();
 }
+

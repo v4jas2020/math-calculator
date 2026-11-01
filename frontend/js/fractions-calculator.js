@@ -56,6 +56,10 @@ if (fractionForm) {
         );
         const errorBox = document.getElementById("fraction-error");
 
+        if (button.disabled) {
+            return;
+        }
+
         button.disabled = true;
         errorBox.textContent = "";
 
@@ -63,15 +67,16 @@ if (fractionForm) {
             if (typeof document.getElementById("equation").getValue !== "function") {
                 throw new Error(t("mathEditorLoading"));
             }
-            const equation = latexToEquation(document.getElementById("equation").value, true);
+            const original = document.getElementById("equation").value;
+            const equation = latexToEquation(original, true);
             const result = await requestSolution(
                 "fractions",
                 equation
             );
-            if (!result.steps.length) {
-                result.steps.push({
+            if (!result.steps.length || result.steps[0].title !== "fractionStepOriginal") {
+                result.steps.unshift({
                     title: "fractionStepOriginal",
-                    latex: document.getElementById("equation").value
+                    latex: original
                 });
             }
             lastFractionResult = result;

@@ -12,6 +12,9 @@ if (quadraticForm) {
             const submitButton = quadraticForm.querySelector(
                 'button[type="submit"]'
             );
+            if (!submitButton.disabled) {
+                quadraticForm.requestSubmit();
+            }
         }
     }, true);
     quadraticForm.addEventListener("submit", async (event) => {
