@@ -23,7 +23,7 @@ if (mathField) {
         });
     });
 }
-function latexToEquation(latex) {
+function latexToEquation(latex, allowRoots = false) {
     const source = latex
         .replace(/\\left|\\right/g, "")
         .replace(/\\cdot|\\times/g, "*")
@@ -44,6 +44,9 @@ function latexToEquation(latex) {
                 const denominator = readGroup();
 
                 output += `(${numerator})/(${denominator})`;
+            } else if (allowRoots && source.startsWith("\\sqrt", position)) {
+                position += 5;
+                output += `sqrt(${readGroup()})`;
             } else if (source[position] === "{") {
                 position++;
                 output += `(${parseUntil("}")})`;

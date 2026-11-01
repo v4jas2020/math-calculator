@@ -6,7 +6,28 @@ const translations = {
         selectCalculator: "Select a calculator",
         combineLikeTerms: "Combine Like Terms (Coming soon)",
         addSubtractExpressions: "Add and Subtract Expressions (Coming soon)",
-        fractions: "Fractions (Coming soon)",
+        fractions: "Fractions",
+        fractionPageTitle: "Fractions - Math Calculator",
+        fractionHeading: "Fractions Calculator",
+        fractionExpression: "Expression:",
+        "Invalid mathematical expression.": "Invalid mathematical expression.",
+        "Expression is too complex.": "Expression is too complex.",
+        "Square roots require a nonnegative value.": "Square roots require a nonnegative value.",
+        "Use an integer exponent between -12 and 12.": "Use an integer exponent between -12 and 12.",
+        fractionEnter: "Enter an expression",
+        fractionIntro: "Calculate fractions, powers and square roots.",
+        fractionNumeratorOne: "First numerator",
+        fractionDenominatorOne: "First denominator",
+        fractionNumeratorTwo: "Second numerator",
+        fractionDenominatorTwo: "Second denominator",
+        fractionOperation: "Operation",
+        fractionAnswerLabel: "Final answer",
+        fractionStepOriginal: "Original expression",
+        fractionStepCommon: "Find a common denominator",
+        fractionStepEquivalent: "Convert to equivalent fractions",
+        fractionStepCombine: "Combine numerators",
+        fractionStepMultiply: "Multiply numerators and denominators",
+        fractionStepReciprocal: "Multiply by the reciprocal",
         expandBrackets: "Expand Brackets (Coming soon)",
         factoriseExpressions: "Factorise Expressions (Coming soon)",
         linearEquations: "Linear Equations (Coming soon)",
@@ -67,7 +88,18 @@ const translations = {
             "Use one equals sign, for example x^2-10x+20=0",
         "Enter a polynomial expression": "Enter a polynomial expression",
         "The coefficient of x� must be nonzero.":
-            "The coefficient of x� must be nonzero."
+            "The coefficient of x� must be nonzero.",
+        fractionStepSimplify: "Simplify the fraction",
+        "Enter two fractions and an operation.":
+            "Enter two fractions and an operation.",
+        "Use the form 1/2+3/4 with integer numerators and positive denominators.":
+            "Use integer numerators and positive denominators.",
+        "A denominator cannot be zero.":
+            "A denominator cannot be zero.",
+        "Cannot divide by zero.":
+            "Cannot divide by zero",
+        "Please use smaller integers":
+            "Please use smaller integers.",
     },
     lt: {
         homePageTitle: "Matematikos skaičiuotuvas",
@@ -76,7 +108,28 @@ const translations = {
         selectCalculator: "Pasirinkite skaičiuotuvą",
         combineLikeTerms: "Jungiame panašiuosius narius (netrukus)",
         addSubtractExpressions: "Sudėtis ir atimtis su reiškiniais (netrukus)",
-        fractions: "Trupmenos (netrukus)",
+        fractions: "Trupmenos",
+        fractionPageTitle: "Trupmenos - Matematikos skaičiuotuvas",
+        fractionExpression: "Reiškinys:",
+        "Invalid mathematical expression.": "Neteisingas matematinis reiškinys.",
+        "Expression is too complex.": "Reiškinys per sudėtingas.",
+        "Square roots require a nonnegative value.": "Po šaknies ženklu esantis reiškinys negali būti neigiamas.",
+        "Use an integer exponent between -12 and 12.": "Naudokite sveikąjį laipsnio rodiklį nuo -12 iki 12.",
+        fractionHeading: "Trupmenų skaičiuotuvas",
+        fractionEnter: "Įveskite reiškinį",
+        fractionIntro: "Skaičiuokite trupmenas, laipsnius ir šaknis.",
+        fractionNumeratorOne: "Pirmosios trupmenos skaitiklis",
+        fractionDenominatorOne: "Pirmosios trupmenos vardiklis",
+        fractionNumeratorTwo: "Antrosios trupmenos skaitiklis",
+        fractionDenominatorTwo: "Antrosios trupmenos vardiklis",
+        fractionOperation: "Veiksmas",
+        fractionAnswerLabel: "Atsakymas",
+        fractionStepOriginal: "Pradinis reiškinys",
+        fractionStepCommon: "Randame bendrą vardiklį",
+        fractionStepEquivalent: "Suvienodiname trupmenų vardiklius",
+        fractionStepCombine: "Atliekame veiksmą su skaitikliais",
+        fractionStepMultiply: "Dauginame skaitiklius ir vardiklius",
+        fractionStepReciprocal: "Dauginame iš atvirkštinės trupmenos",
         expandBrackets: "Išskleisti skliaustus (netrukus)",
         factoriseExpressions: "Skaidyti reiškinius dauginamaisiais (netrukus)",
         linearEquations: "Tiesinės lygtys (netrukus)",
@@ -138,7 +191,18 @@ const translations = {
             "Naudokite vieną lygybės ženklą, pavyzdžiui, x^2-10x+20=0",
         "Enter a polynomial expression": "Įveskite daugianarį reiškinį",
         "The coefficient of x� must be nonzero.":
-            "Kvadratinio nario koeficientas negali būti lygus nuliui."
+            "Kvadratinio nario koeficientas negali būti lygus nuliui.",
+        fractionStepSimplify: "Suprastiname trupmeną",
+        "Enter two fractions and an operation.":
+            "Įveskite dvi trupmenas ir pasirinkite veiksmą.",
+        "Use the form 1/2+3/4 with integer numerators and positive denominators.":
+            "Naudokite sveikuosius skaitiklius ir teigiamus vardiklius.",
+        "A denominator cannot be zero.":
+            "Trupmenos vardiklis negali būti nulis.",
+        "Cannot divide by zero.":
+            "Dalyba iš nulio negalima.",
+        "Please use smaller integers.":
+            "Naudokite mažesnius sveikuosius skaičius.",
     }
 };
 

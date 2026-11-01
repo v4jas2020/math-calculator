@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="fractionPageTitle">Fractions - Math Calculator</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathlive@0.111.1/mathlive.min.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="language-switcher">
+        <button type="button" data-language="en" aria-label="English">🇬🇧</button>
+        <button type="button" data-language="lt" aria-label="Lietuvių">🇱🇹</button>
+    </div>
+
+    <h1 data-i18n="fractionHeading">Fractions Calculator</h1>
+    <a href="../index.html" data-i18n="backToCalculators">Back to calculators</a>
+</header>
+
+<hr>
+
+<main>
+    <h2 data-i18n="fractionEnter">Enter two fractions</h2>
+
+    <p data-i18n="fractionIntro">
+        Add, subtract, multiply or divide fractions.
+    </p>
+
+    <form id="fraction-form">
+        <label for="equation" data-i18n="fractionExpression">Expression:</label>
+        <math-field id="equation" math-virtual-keyboard-policy="manual" aria-label="Expression"></math-field>
+        <div class="math-toolbar" aria-label="Math symbols">
+            <button type="button" data-math="+">+</button>
+            <button type="button" data-math="-">−</button>
+            <button type="button" data-math="\cdot">×</button>
+            <button type="button" data-math="\div">÷</button>
+            <button type="button" data-math="\left(\placeholder{}\right)">( )</button>
+            <button type="button" data-math="\frac{\placeholder{}}{\placeholder{}}">a/b</button>
+            <button type="button" data-math="\sqrt{\placeholder{}}">√</button>
+            <button type="button" data-math="^{\placeholder{}}">xʸ</button>
+            <button type="button" data-math="^{2}">x²</button>
+            <button type="button" data-command="deleteBackward">⌫</button>
+        </div>
+
+        <button type="submit" data-i18n="calculate">Calculate</button>
+    </form>
+
+    <p id="fraction-error" role="alert"></p>
+
+    <h3 data-i18n="examples">Examples</h3>
+    <div class="fraction-examples">
+        <button type="button" class="fraction-example"
+                data-a="1" data-b="2" data-op="+"
+                data-c="3" data-d="4">
+            \(\frac12+\frac34\)
+        </button>
+
+        <button type="button" class="fraction-example"
+                data-a="2" data-b="3" data-op="-"
+                data-c="1" data-d="6">
+            \(\frac23-\frac16\)
+        </button>
+
+        <button type="button" class="fraction-example"
+                data-a="2" data-b="3" data-op="*"
+                data-c="9" data-d="4">
+            \(\frac23\cdot\frac94\)
+        </button>
+
+        <button type="button" class="fraction-example"
+                data-a="5" data-b="6" data-op="/"
+                data-c="10" data-d="3">
+            \(\frac56\div\frac{10}{3}\)
+        </button>
+    </div>
+
+    <section id="fraction-result" hidden>
+        <h2 data-i18n="stepByStep">Step-by-step solution</h2>
+        <div id="fraction-steps"></div>
+
+        <h3 data-i18n="fractionAnswerLabel">Final answer</h3>
+        <div id="fraction-answer"></div>
+    </section>
+</main>
+
+<script src="../js/translations.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/render-steps.js"></script>
+<script src="../js/fractions-calculator.js"></script>
+<script src="../js/math-editor.js"></script>
+</body>
+</html>

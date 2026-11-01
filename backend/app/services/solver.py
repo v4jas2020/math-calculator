@@ -1,8 +1,10 @@
 
 from ..rules.equations import solve_quadratic
+from ..rules.fractions import solve_fractions
 
 SOLVERS = {
-    "quadratic": solve_quadratic
+    "quadratic": solve_quadratic,
+    "fractions": solve_fractions
 }
 
 
