@@ -152,4 +152,78 @@ mjx-container[display="true"] {
 .site-footer a:hover {
     color: #0070f3
 }
+/* stilius css svetaines nuo cia: */
+#home {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 60px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+#home h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 28px;
+}
+.calculator-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 12px;
+    border: none;
+}
+.calculator-table td {
+    width: 50%;
+    height: 66px;
+    padding: 18px 22px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 16px;
+    vertical-align: middle;
+    transition: background 0.15s, border-color 0.15s;
+}
+.calculator-table td:hover {
+    background: #f3f3f3;
+    border-color: #c4c4c4;
+}
+.calculator-table td a {
+    color: #2659a5;
+    font-weight: 600;
+    text-decoration: none;
+}
+.calculator-table td a:hover {
+    text-decoration: underline;
+}
+/* jeigu jau yra padarytas/paruostas skaiciuotuvas */
+.calculator-table td:has(a) {
+    background: #f3f7fc;
+    border-color: #b9cce6;
+}
+
+/* telefonu layout */
+
+@media  (max-width: 650px) {
+    #home {
+        margin-top: 20px;
+    }
+    #home h2 {
+        font-size: 24px;
+    }
+    .calculator-table,
+    .calculator-table tbody,
+    .calculator-table tr {
+        display: block;
+        width: 100%;
+    }
+    .calculator-table td {
+        display: block;
+        width: 100%;
+        height: auto;
+        min-height: 64px;
+        margin-bottom: 12px;
+        padding: 18px;
+    }
+}
 
