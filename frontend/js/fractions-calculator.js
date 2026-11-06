@@ -1,6 +1,20 @@
 const fractionForm = document.getElementById("fraction-form");
 let lastFractionResult = null;
 
+function toMixedNumberLatex(answer) {
+    const match = /^(-?\d+)\/([1-9]\d*)$/.exec(String(answer));
+    if (!match) return null;
+    const numerator = BigInt(match[1]);
+    const denominator = BigInt(match[2]);
+    const absolute = numerator < 0n ? - numerator : numerator;
+    const whole = absolute / denominator;
+    const remainder = absolute % denominator;
+
+    if (whole === 0n || remainder === 0n) return null;
+    const sign = numerator < 0n ? "-" : "";
+    return `${sign}${whole}\\frac{$(remainder}}{$(denominator}}`;
+}
+
 async function renderFractionSolution(result) {
     const container = document.getElementById("fraction-steps");
     const finalAnswer = document.getElementById("fraction-answer");
@@ -31,8 +45,15 @@ async function renderFractionSolution(result) {
         container.appendChild(section);
     });
 
-    finalAnswer.textContent =
-        "\\[\\boxed{" + result.final_answer_latex + "}\\]";
+    const mixedNumber = toMixedNumberLatex(result.answer);
+    if (mixedNumber) {
+        finalAnswer.textContent =
+            `\\[\\boxed{${result.final_answer_latex}}` +
+            `\\quad=\\quad\\boxed{${mixedNumber}\\]`;
+    } else {
+        finalAnswer.textContent =
+            `\\[\\boxed{${result.final_answer_latex}}\\]`
+    }
 
     resultSection.hidden = false;
 
