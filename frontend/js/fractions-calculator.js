@@ -12,7 +12,7 @@ function toMixedNumberLatex(answer) {
 
     if (whole === 0n || remainder === 0n) return null;
     const sign = numerator < 0n ? "-" : "";
-    return `${sign}${whole}\\frac{$(remainder}}{$(denominator}}`;
+    return `${sign}${whole}\\frac{${remainder}}{${denominator}}`;
 }
 
 async function renderFractionSolution(result) {
@@ -49,7 +49,7 @@ async function renderFractionSolution(result) {
     if (mixedNumber) {
         finalAnswer.textContent =
             `\\[\\boxed{${result.final_answer_latex}}` +
-            `\\quad=\\quad\\boxed{${mixedNumber}\\]`;
+            `\\quad=\\quad\\boxed{${mixedNumber}}\\]`;
     } else {
         finalAnswer.textContent =
             `\\[\\boxed{${result.final_answer_latex}}\\]`
