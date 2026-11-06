@@ -375,3 +375,162 @@ header h1 {
     outline: 3px solid #2659a5;
     outline-offset: -3px;
 }
+
+:root {
+    --page: #f8f8f8;
+    --surface: #ffffff;
+    --soft: #f1f1f1;
+    --border: #d5d5d5;
+    --text: #242424;
+    --muted: #666666;
+    --accent: #333333;
+    --accent-soft: #ebebeb;
+}
+body {
+    background: var(--page);
+    color: var(--text);
+}
+header,
+main {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+header h1 {
+    text-align: center;
+    letter-spacing: -0.3em;
+}
+a {
+    color: var(--accent);
+}
+
+.calculator-table td {
+    background: var(--surface);
+    border-color: var(--border);
+    border-radius: 10px;
+}
+.calculator-table td.calculator-available {
+    padding: 0;
+    overflow: hidden;
+    background: var(--surface);
+}
+.calculator-link {
+    color: var(--text);
+    font-weight: 600;
+    min-height: 70px;
+    transition: background 0.15s ease;
+}
+.calculator-link:hover {
+    background: var(--soft);
+    text-decoration: none;
+}
+.calculator-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -3px;
+}
+
+#equation {
+    background: var(--surface);
+    border: 1px solid #bdbdbd;
+    border-radius: 9px;
+    padding: 14px;
+    min-height: 58px;
+    color: var(--text);
+}
+#equation:focus-within {
+    border-color: var(--accent);
+    outline: 2px solid var(--accent-soft);
+}
+.math-toolbar button,
+.fraction-example {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+.math-toolbar button:hover,
+.fraction-example:hover {
+    background: var(--soft);
+    border-color: #aaaaaa;
+}
+
+#quadratic-form button[type="submit"],
+#fraction-form button[type="submit"] {
+    background: var(--accent);
+    color: #ffffff;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 12px 24px;
+    min-height: 44px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+#quadratic-form button[type="submit"]:hover,
+#fraction-form button[type="submit"]:hover {
+    background: #505050;
+}
+#quadratic-form button[type="submit"]:disabled,
+#fraction-form button[type="submit"]:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
+#solution-steps .solution-group,
+.fraction-solution-step {
+    border-top: 1px solid var(--border);
+    padding: 16px 0;
+}
+#solution-steps h3,
+.fraction-solution-step h3 {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+}
+#solution-steps p {
+    color: var(--muted);
+}
+#final-answer,
+#fraction-answer {
+    background: var(--accent-soft);
+    border: none;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+.site-footer {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+.site-footer a:hover {
+    color: #555555;
+}
+@media (max-width: 650px) {
+    header,
+    main {
+        padding: 14px;
+    }
+    #equation {
+        width: 100%;
+        font-size: 19px;
+    }
+    .math-toolbar {
+        gap: 6px;
+    }
+    .math-toolbar button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    #solution-steps,
+    #fraction-steps {
+        grid-template-colums: minmax(0, 1fr);
+    }
+    #final-answer,
+    #fraction-answer {
+        padding: 12px;
+    }
+}
