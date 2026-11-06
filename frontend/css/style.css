@@ -397,7 +397,7 @@ main {
     margin-right: auto;
     box-sizing: border-box;
 }
-header h1 { 
+header h1 {
     text-align: center;
     letter-spacing: -0.075em;
     line-height: 1.25;
@@ -534,5 +534,165 @@ a {
     #final-answer,
     #fraction-answer {
         padding: 12px;
+    }
+}
+.home-page header {
+    padding-top: 24px;
+    padding-bottom: 12px;
+}
+.home-page header h1 {
+    margin: 35px 0 12px;
+    font-size: clamp(32px, 5vw, 46px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    text-align: center;
+}
+.home-page .language-switcher {
+    justify-content: flex-end;
+    gap: 8px;
+}
+.home-page .language-switcher button {
+    min-width: 42px;
+    min-height: 36px;
+    padding: 6px 8px;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+.home-page .language-switcher button:hover {
+    background: #eeeeee;
+}
+.home-page .language-switcher .selected-language {
+    border-color: #444;
+}
+.home-page #home {
+    max-width: 940px;
+    margin: 28px auto 70px;
+    padding: 0 16px;
+}
+.home-page #home h2 {
+    margin: 0 0 24px;
+    font-size: clamp(22px, 3vw, 27px);
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+.home-page .calculator-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 12px;
+}
+.home-page .calculator-table td {
+    width: 50%;
+    height: 86px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+
+    color: #737373;
+    font-size: 15px;
+    font-weight: 400;
+
+    text-align: center;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+
+    transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+.home-page .calculator-table td:not(.calculator-available):hover {
+    background: #fff;
+    border-color: #dedede;
+}
+.home-page .calculator-table td.calculator-available {
+    padding: 0;
+    overflow: hidden;
+    border-color: #bcbcbc;
+}
+.home-page .calculator-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 86px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: inherit;
+    color: #242424;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+.home-page .calculator-available:hover {
+    border-color: #555;
+}
+.home-page .calculator-link:hover {
+    background: #eeeeee;
+    color: #111;
+    text-decoration: none;
+}
+.home-page .calculator-link:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: -3px;
+}
+.home-page .site-footer {
+    margin-top: 50px;
+    padding: 24px 16px;
+    background: #f5f5f5;
+    border-top: 1px solid #dedede;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+}
+.home-page .site-footer a {
+    color: #333;
+    font-weight: 600;
+}
+@media (max-width: 650px) {
+    .home-page header {
+        padding-top: 12px;
+    }
+    .home-page header h1 {
+        margin-top: 24px;
+    }
+    .home-page #home {
+        margin-top: 20px;
+        padding: 0 8px;
+    }
+    .home-page .calculator-table {
+        display: block;
+        width: 100%;
+        border-spacing: 0;
+    }
+    .home-page .calculator-table tbody,
+    .home-page .calculator-table tr {
+        display: block;
+        width: 100%;
+    }
+    .home-page .calculator-table td {
+        display: block;
+        width: 100%;
+        height: auto;
+        min-height: 76px;
+        margin-bottom: 12px;
+        padding: 20px 14px;
+    }
+    .home-page .calculator-link {
+        min-height: 76px;
+        padding: 20px 14px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .home-page .calculator-table td,
+    .home-page .calculator-link {
+        transition: none;
     }
 }
