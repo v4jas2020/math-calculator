@@ -1,8 +1,8 @@
 const translations = {
     en: {
-        homePageTitle: "Math Calculator",
+        homePageTitle: "Math Calculators",
         quadraticPageTitle: "Quadratic Equations - Math Calculator",
-        mathCalculator: "Math Calculator",
+        mathCalculator: "Math Calculators",
         selectCalculator: "Select a calculator",
         combineLikeTerms: "Combine Like Terms (Coming soon)",
         addSubtractExpressions: "Add and Subtract Expressions (Coming soon)",
@@ -109,9 +109,9 @@ const translations = {
             "Please use smaller integers.",
     },
     lt: {
-        homePageTitle: "Matematikos skaičiuotuvas",
+        homePageTitle: "Matematikos skaičiuotuvai",
         quadraticPageTitle: "Kvadratinės lygtys - Matematikos skaičiuotuvas",
-        mathCalculator: "Matematikos skaičiuotuvas",
+        mathCalculator: "Matematikos skaičiuotuvai",
         selectCalculator: "Pasirinkite skaičiuotuvą",
         combineLikeTerms: "Jungiame panašiuosius narius (netrukus)",
         addSubtractExpressions: "Sudėtis ir atimtis su reiškiniais (netrukus)",

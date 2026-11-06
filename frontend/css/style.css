@@ -349,7 +349,7 @@ header h1 {
         grid-template-columns: minmax(0, 1fr);
     }
 }
-.calculator-table td.calculator-table-available{
+.calculator-table td.calculator-available{
     padding: 0;
     overflow: hidden;
 }
@@ -399,7 +399,9 @@ main {
 }
 header h1 {
     text-align: center;
-    letter-spacing: -0.3em;
+    letter-spacing: -0.075em;
+    line-height: 1.25;
+    font-size: clamp(28px, 4vw, 38px);
 }
 a {
     color: var(--accent);
@@ -527,7 +529,7 @@ a {
     }
     #solution-steps,
     #fraction-steps {
-        grid-template-colums: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
     }
     #final-answer,
     #fraction-answer {
