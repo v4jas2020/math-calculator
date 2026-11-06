@@ -50,7 +50,7 @@ function latexToEquation(latex, allowRoots = false) {
             } else if (source[position] === "{") {
                 position++;
                 output += `(${parseUntil("}")})`;
-            } else if (/^[0-9.x()+\-*/^=]$/.test(source[position])) {
+            } else if (/^[0-9a-zA-Z.()+\-*/^=]$/.test(source[position])) {
                 output += source[position++];
             } else {
                 throw new Error(t("invalidMathExpression"));

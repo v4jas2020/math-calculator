@@ -6,11 +6,11 @@ import sympy as sp
 from sympy.integrals.manualintegrate import parts_rule
 
 X = sp.Symbol("x")
-TOKENS = re.compile(r"\d+(?:\.\d+)?|x|[()+\-*/^]")
+TOKENS = re.compile(r"\d+(?:\.\d+)?|[a-z]|[()+\-*/^]")
 ALLOWED_POWERS = (sp.Integer(0), sp.Integer(1), sp.Integer(2))
 
 
-def parse_expression(text, preserve=False):
+def parse_expression(text, preserve=False, variable=X):
     if not isinstance(text, str):
         raise ValueError("Enter a valid expression")
 
@@ -43,8 +43,8 @@ def parse_expression(text, preserve=False):
     def read(node):
         if isinstance(node, ast.Expression):
             return read(node.body)
-        if isinstance(node, ast.Name) and node.id == "x":
-            return X
+        if isinstance(node, ast.Name) and node.id == variable.name:
+            return variable
         if isinstance(node, ast.Constant) and type(node.value) in (int, float):
             return sp.Rational(str(node.value))
         if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
@@ -75,7 +75,7 @@ def parse_expression(text, preserve=False):
                     return sp.Mul(left, right, evaluate=False)
                 return left * right
             if isinstance(node.op, ast.Div):
-                if right == 0 or right.has(X):
+                if right == 0 or right.has(variable):
                     raise ValueError("Division must not be by zero or contain x")
                 if preserve:
                     return sp.Mul(
@@ -126,12 +126,16 @@ def solve_quadratic(equation):
         raise ValueError("Use one equals sign, for example x^2-10x+20=0")
 
     lhs_text, rhs_text = equation.split("=")
-    lhs = parse_expression(lhs_text)
-    rhs = parse_expression(rhs_text)
+    variables = set(re.findall(r"[a-z]", equation.lower()))
+    if len(variables) != 1:
+        raise ValueError("Use exactly one variable in the equation.")
+    variable = sp.Symbol(variables.pop())
+    lhs = parse_expression(lhs_text, variable=variable)
+    rhs = parse_expression(rhs_text, variable=variable)
     difference = sp.expand(lhs - rhs)
 
     try:
-        polynomial = sp.Poly(difference, X)
+        polynomial = sp.Poly(difference, variable)
     except sp.PolynomialError:
         raise ValueError("Enter a polynomial expression") from None
 
@@ -148,8 +152,8 @@ def solve_quadratic(equation):
         )
 
     step("Original equation", rf"{tex(lhs)} = {tex(rhs)}")
-    lhs_work = parse_expression(lhs_text, preserve=True)
-    rhs_work = parse_expression(rhs_text, preserve=True)
+    lhs_work = parse_expression(lhs_text, preserve=True, variable=variable)
+    rhs_work = parse_expression(rhs_text, preserve=True, variable=variable)
 
     for _ in range(6):
         next_lhs = distribute_once(lhs_work)
@@ -176,10 +180,10 @@ def solve_quadratic(equation):
         rf"{tex(difference)} = 0",
 
     )
-    step("Standard form", r"ax^2 + bx + c = 0")
+    step("Standard form", rf"A{variable}^2 + B{variable} + C = 0" if variable != X else r"ax^2 + bx + c = 0")
     step(
         "Insert all coefficients",
-        _coefficient_form(a, b, c, tex),
+        _coefficient_form(a, b, c, tex, variable),
 
     )
     step(
@@ -233,13 +237,13 @@ def solve_quadratic(equation):
 
         step(
             f"Root {number}: formula",
-            rf"x_{number} = "
+            rf"{variable}_{number} = "
             rf"\frac{{-b {operator} \sqrt{{D}}}}{{2a}}"
         )
 
         step(
             f"Root {number}: substitute values",
-            rf"x_{number} = "
+            rf"{variable}_{number} = "
             rf"\frac{{-\left({tex(b)}\right) {operator} "
             rf"\sqrt{{{tex(discriminant)}}}}}"
             rf"{{2\cdot\left({tex(a)}\right)}}"
@@ -247,7 +251,7 @@ def solve_quadratic(equation):
 
         step(
             f"Root {number}: evaluate signs and denominator",
-            rf"x_{number} = "
+            rf"{variable}_{number} = "
             rf"\frac{{{tex(-b)} {operator}"
             rf"{tex(sqrt_discriminant)}}}"
             rf"{{{tex(denominator)}}}"
@@ -256,7 +260,7 @@ def solve_quadratic(equation):
 
         step(
             f"Root {number}: simplify numerator",
-            rf"x_{number} = "
+            rf"{variable}_{number} = "
             rf"\frac{{{tex(numerator)}}}"
             rf"{{{tex(denominator)}}}"
         )
@@ -271,33 +275,33 @@ def solve_quadratic(equation):
 
         step(
             f"Root {number}: exact answer",
-            rf"x_{number} = {tex(sp.together(root))}",
+            rf"{variable}_{number} = {tex(sp.together(root))}",
 
         )
 
     if discriminant == 0:
-        final = rf"x_1 = x_2 = {tex(sp.together(roots[0]))}"
+        final = rf"{variable}_1 = {variable}_2 = {tex(sp.together(roots[0]))}"
     else:
         final = (
-            rf"x_1 = {tex(sp.together(roots[0]))},\quad "
-            rf"x_2 = {tex(sp.together(roots[1]))}"
+            rf"{variable}_1 = {tex(sp.together(roots[0]))},\quad "
+            rf"{variable}_2 = {tex(sp.together(roots[1]))}"
         )
     step("Final answer", final)
     return {**result, "roots": [str(root) for root in roots], "final_answer_latex": final}
 
 
 def _ends_term(token):
-    return token == "x" or token == ")" or token[0].isdigit()
+    return token.isalpha() or token == ")" or token[0].isdigit()
 
 
 def _starts_term(token):
-    return token == "x" or token == "(" or token[0].isdigit()
+    return token.isalpha() or token == "(" or token[0].isdigit()
 
 
-def _coefficient_form(a, b, c, tex):
+def _coefficient_form(a, b, c, tex, variable=X):
     def signed(value):
         return "+" if value >= 0 else "-", tex(abs(value))
 
     b_sign, b_value = signed(b)
     c_sign, c_value = signed(c)
-    return rf"{tex(a)}x^2 {b_sign} {b_value}x {c_sign} {c_value} = 0"
+    return rf"{tex(a)}{variable}^2 {b_sign} {b_value}{variable} {c_sign} {c_value} = 0"

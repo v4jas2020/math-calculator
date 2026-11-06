@@ -397,7 +397,7 @@ main {
     margin-right: auto;
     box-sizing: border-box;
 }
-header h1 {
+header h1 { 
     text-align: center;
     letter-spacing: -0.075em;
     line-height: 1.25;
