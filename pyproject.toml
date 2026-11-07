@@ -5,6 +5,7 @@ requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.162.0",
     "sympy>=1.14.0",
+    "tex>=1.8",
 ]
 
 [tool.vercel]

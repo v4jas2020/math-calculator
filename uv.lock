@@ -66,12 +66,14 @@ source = { virtual = "." }
 dependencies = [
     { name = "fastapi" },
     { name = "sympy" },
+    { name = "tex" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "fastapi", specifier = ">=0.162.0" },
     { name = "sympy", specifier = ">=1.14.0" },
+    { name = "tex", specifier = ">=1.8" },
 ]
 
 [[package]]
@@ -236,6 +238,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/83/d3/803453b36afefb7c2
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5", size = 6299353 },
 ]
+
+[[package]]
+name = "tex"
+version = "1.8"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/97/64/7f5d45a782be53b88e5d0963b1ef9a9fc3c6ff409fbbd2006418c5b285ff/tex-1.8.tar.gz", hash = "sha256:b6950860c733b37b7c3631228abd3a70d8f75a96c3a2f17eac61158185dd224d", size = 4189 }
 
 [[package]]
 name = "typing-extensions"

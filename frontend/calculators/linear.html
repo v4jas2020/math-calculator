@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="linearPageTitle">
+        Linear Equations - Math Calculators
+    </title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathlive@0.111.1/mathlive.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="language-switcher">
+        <button type="button" data-language="en"
+                aria-label="English">🇬🇧</button>
+        <button type="button" data-language="lt"
+                aria-label="Lietuvių">🇱🇹</button>
+    </div>
+    <h1 data-i18n="linearHeading">Linear Equation Solver</h1>
+
+    <a href="../index.html" data-i18n="backToCalculators">
+        Back to calculators
+    </a>
+</header>
+<hr>
+<main>
+    <h2 data-i18n="enterEquation">Enter your equation</h2>
+    <p data-i18n="linearIntro">
+        Solve linear equations with brackets, fractions,
+        and variables on both sides.
+    </p>
+    <form id="linear-form">
+        <label for="equation" data-i18n="equations">
+            Equations:
+        </label>
+        <math-field id="equation"
+                    math-virtual-keyboard-policy="manual"
+                    aria-label="Linear equation">
+
+        </math-field>
+
+        <div class="math-toolbar" aria-label="Math symbols">
+            <button type="button" data-math="x">x</button>
+            <button type="button" data-math="y">y</button>
+            <button type="button" data-math="a">a</button>
+            <button type="button" data-math="+">+</button>
+            <button type="button" data-math="-">−</button>
+            <button type="button" data-math="\cdot">×</button>
+            <button type="button" data-math="\div">÷</button>
+            <button type="button" data-math="=">=</button>
+            <button type="button"
+                    data-math="\left(\placeholder{}\right)">
+                ( )
+            </button>
+            <button type="button"
+                    data-math="\frac{\placeholder{}}{\placeholder{}}">
+                a/b
+            </button>
+            <button type="button" data-command="deleteBackward">
+                ⌫
+            </button>
+        </div>
+        <button type="submit" data-i18n="calculate">
+            Calculate
+        </button>
+    </form>
+
+    <p id="linear-error" role="alert"></p>
+    <h3 data-i18n="examples">Examples</h3>
+    <div class="linear-examples">
+        <button type="button" class="linear-example"
+                data-expression="3(2x-1)+5=20">
+            \(3(2x-1)+5=20\)
+        </button>
+        <button type="button" class="linear-example"
+                data-expression="\frac{x+1}{2}=5">
+            \(frac{x+1}{2}=5\)
+        </button>
+        <button type="button" class="linear-example"
+                data-expression="2(x+1)=2x+2">
+            \(2(x+1)=2x+2\)
+        </button>
+    </div>
+
+    <hr>
+
+    <section id="linear-result" aria-live="polite" hidden>
+        <h2 data-i18n="stepByStep">
+            Step-by-step solution
+        </h2>
+
+        <div id="linear-steps"></div>
+
+        <h3 data-i18n="linearFinalAnswer">Final answer</h3>
+        <div id="linear-answer"></div>
+    </section>
+</main>
+
+<script src="../js/translations.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/render-steps.js"></script>
+<script src="../js/linear-calculator.js"></script>
+<script src="../js/math-editor.js"></script>
+
+</body>
+</html>

@@ -49,6 +49,7 @@ const translations = {
         equation: "Equation:",
         equationPlaceholder: "2x^2 - 5x + 2 = 0",
         calculate: "Calculate",
+        linearEquations: "Linear Equations",
         supportsQuadratics: "Supports full and incomplete quadratic equations.",
         examples: "Examples",
         stepByStep: "Step-by-step solution",
@@ -107,6 +108,25 @@ const translations = {
             "Cannot divide by zero",
         "Please use smaller integers":
             "Please use smaller integers.",
+        linearHeading: "Linear Equation Solver",
+        linearIntro: "Solve linear equations with brackets, fractions, and variables on both sides",
+        linearFinalAnswer: "Final answer",
+        linearStepOriginal: "Original equation",
+        linearStepExpand: "Expand brackets",
+        linearStepSimplify: "Combine like terms",
+        linearStepMoveVariables: "Move variable terms to the left",
+        linearStepMoveConstants: "Move constants to the right",
+        linearStepDivide: "Divide by the coefficient",
+        linearStepCompare: "Check resulting equality",
+        linearNoSolution: "No solution",
+        linearInfinite: "Infinitely many solutions",
+
+        "Enter one linear equation with an equals sign.":
+            "Enter one linear equation with an equals sign.",
+        "Use exactly one variable letter.":
+            "Use exactly one variable letter",
+        "Only first-degree equations are supported.":
+            "Only first-degree equations are supported.",
     },
     lt: {
         homePageTitle: "Matematikos skaičiuotuvai",
@@ -155,6 +175,7 @@ const translations = {
         backToCalculators: "Grįžti į skaičiuotuvus",
         enterEquation: "Įveskite lygtį",
         generalForm: "Bendroji forma:",
+        linearEquations: "Tiesinės lygtys",
         equation: "Lygtis:",
         equationPlaceholder: "2x^2 - 5x + 2 = 0",
         calculate: "Skaičiuoti",
@@ -217,6 +238,25 @@ const translations = {
             "Dalyba iš nulio negalima.",
         "Please use smaller integers.":
             "Naudokite mažesnius sveikuosius skaičius.",
+        linearHeading: "Tiesinių lygčių sprendimas",
+        linearIntro: "Spręskite tiesines lygtis su skliaustais, trupmenomis ir nežinomaisiais.",
+        linearFinalAnswer: "Atsakymas",
+        linearStepOriginal: "Pradinė lygtis",
+        linearStepExpand: "Išskleidžiame skliaustus",
+        linearStepSimplify: "Sutraukiame panašiuosius narius",
+        linearStepMoveVariables: "Perkeliame narius su nežimuoju į kairę",
+        linearStepMoveConstants: "Perkeliame laisvuosius narius į dešinę",
+        linearStepDivide: "Padalijame iš koeficiento",
+        linearStepCompare: "Patikriname gautą lygybę",
+        linearNoSolution: "Sprendinių nėra",
+        linearInfinite: "Be galo daug sprendinių",
+
+        "Enter one linear equation with an equals sign.":
+            "Įveskite tiesinę lygtį su lygybės ženklu.",
+        "Use exactly one variable letter.":
+            "Naudokitę tik vieną nežinomąjį.",
+        "Only first-degree equations are supported.":
+            "Palaikomos tik pirmojo laipsnio lygtys.",
     }
 };
 

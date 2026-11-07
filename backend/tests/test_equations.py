@@ -1,6 +1,6 @@
 import unittest
 
-from app.rules.equations import parse_expression, solve_quadratic
+from backend.app.rules.equations import parse_expression, solve_quadratic
 
 
 class EquationRuleTests(unittest.TestCase):
