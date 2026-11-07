@@ -770,3 +770,49 @@ a {
         font-size: 19px;
     }
 }
+
+/* STATUS BADGES W.I.P. */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+}
+.status--beta {
+    background: #1d4ed8;
+}
+.status--broken {
+    background: #b42318;
+}
+.status--functional {
+    background: #166534;
+}
+
+/* namu puslapis lol */
+.home-page .calculator-link {
+    flex-direction: column;
+    gap: 8px;
+}
+.calculator-page-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+.calculator-page-title h1 {
+    margin: 0;
+}
+.calculator-page-title .status-badge {
+    padding: 9px 15px;
+    font-size: 12px;
+}

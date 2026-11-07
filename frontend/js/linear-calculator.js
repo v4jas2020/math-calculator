@@ -37,7 +37,7 @@ async function renderLinearSolution(result) {
 
     resultSection.hidden = false;
 
-    await window.MathJax.typeSetPromise([
+    await window.MathJax.typesetPromise([
         container,
         answer
     ]);
