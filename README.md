@@ -36,7 +36,7 @@ Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club 
 | Quadratic Equations | Functional |
 | Fractions | Beta |
 | Linear Equations | Functional |
-| Expand Brackets | Beta |
+| Expand Brackets | Functional |
 | Combine Like Terms | Planned |
 | Factorise Expressions | Planned |
 | Powers and Roots | Planned |
@@ -85,7 +85,7 @@ Visit **http://127.0.0.1:8000**.
 - [x] Linear equation solver
 - [x] Visual mathematical editor
 - [x] English and Lithuanian support
-- [ ] Finish testing Expand Brackets
+- [x] Finish testing Expand Brackets
 - [ ] Improve advanced mathematical explanations
 - [ ] Add more calculators
 - [ ] Add educational guides

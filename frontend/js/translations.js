@@ -4,7 +4,6 @@ const translations = {
         quadraticPageTitle: "Quadratic Equations - Math Calculator",
         mathCalculator: "Math Calculators",
         selectCalculator: "Select a calculator",
-        combineLikeTerms: "Combine Like Terms (Coming soon)",
         addSubtractExpressions: "Add and Subtract Expressions (Coming soon)",
         fractions: "Fractions",
         fractionPageTitle: "Fractions - Math Calculator",
@@ -146,6 +145,14 @@ const translations = {
             "Use exactly one variable letter",
         "Only first-degree equations are supported.":
             "Only first-degree equations are supported.",
+
+
+        combineLikeTerms: "Combine Like Terms",
+        likeTermsPageTitle: "Combine Like Terms - Math Calculators",
+        likeTermsHeading: "Combine Like Terms",
+        combineLikeTermsComingSoon: "Calculator under development",
+        likeTermsDescription: "Step-by-step simplification of algebraic expressions is coming soon.",
+
     },
     lt: {
         homePageTitle: "Matematikos skaičiuotuvai",
@@ -202,7 +209,7 @@ const translations = {
         "Use smaller numbers.": "Naudokite mažesnius skaičius.",
         "Variable denominators are not supported.": "Trupmenos su kintamaisiais vardiklyje nepalaikomos.",
         "Use an integer exponent from 0 to 3.": "Naudokite sveikąjį laipsnio rodiklį nuo 0 iki 3.",
-,
+
         factoriseExpressions: "Skaidyti reiškinius dauginamaisiais (netrukus)",
         linearEquations: "Tiesinės lygtys (netrukus)",
         powersRoots: "Laipsniai ir šaknys (netrukus)",
@@ -295,6 +302,14 @@ const translations = {
             "Naudokitę tik vieną nežinomąjį.",
         "Only first-degree equations are supported.":
             "Palaikomos tik pirmojo laipsnio lygtys.",
+
+
+        combineLikeTerms: "Panašiųjų narių sutraukimas",
+        likeTermsPageTitle: "Panašiųjų narių sutraukimas - Matematikos skaičiuotuvai",
+        likeTermsHeading: "Panašiųjų narių sutraukimas",
+        likeTermsComingSoon: "Skaičiuotuvas kuriamas",
+        likeTermsDescription: "Netrukus galėsite žingsnis po žingsnio supaprastinti algebrinius reiškinius.",
+
     }
 };
 

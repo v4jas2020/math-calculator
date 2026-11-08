@@ -905,3 +905,20 @@ main { flex: 1 0 auto; width: 100%; }
     text-decoration: underline;
 }
 .site-footer a:hover { color: #111; }
+
+.calculator-placeholder {
+    max-width: 650px;
+    margin: 80px auto;
+    padding: 30px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+.calculator-placeholder h2 {
+    margin: 0;
+}
+.calculator-placeholder p {
+    color: var(--muted);
+}
+
