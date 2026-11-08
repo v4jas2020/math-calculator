@@ -16,7 +16,7 @@ Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club 
 
 ## Preview
 
-![Math Calculators Website](frontend/assets/images/website-preview.png)
+![Math Calculators Website](frontend/assets/images/Screenshot_2026-11-08_20-07-52.png)
 
 *Interactive mathematical input and step-by-step solutions.*
 

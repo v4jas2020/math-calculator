@@ -2,9 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="expandPageTitle">Expand Brackets - Math Calculators</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathlive@0.111.1/mathlive.min.js"></script>
 </head>
 <body>
+<header>
+    <div class="language-switcher">
+        <button type="button" data-language="en" aria-label="English">🇬🇧</button>
+        <button type="button" data-language="lt" aria-label="Lietuvių">🇱🇹</button>
+    </div>
+    <div class="calculator-page-title">
+        <h1 data-i18n="expandHeading">Expand Brackets</h1>
+        <span class="status-badge status--beta">BETA</span>
+    </div>
+    <a href="../index.html" data-i18n="backToCalculators">Back to calculators</a>
+</header>
+<hr>
+<main>
+    <h2 data-i18n="expandEnter">Enter an expression</h2>
+    <p data-i18n="expandIntro">Expand brackets and combine like terms.</p>
+    <form id="expand-form">
+        <label for="equation" data-i18n="fractionExpression">Expression:</label>
+        <math-field id="equation" math-virtual-keyboard-policy="manual" aria-label="Expression"></math-field>
+        <div class="math-toolbar" aria-label="Math symbols">
+            <button type="button" data-math="x">x</button>
+            <button type="button" data-math="y">y</button>
+            <button type="button" data-math="a">a</button>
+            <button type="button" data-math="b">b</button>
+            <button type="button" data-math="+">+</button>
+            <button type="button" data-math="-">−</button>
+            <button type="button" data-math="\cdot">×</button>
+            <button type="button" data-math="\div">÷</button>
+            <button type="button" data-math="\left(\placeholder{}\right)">( )</button>
+            <button type="button" data-math="\frac{\placeholder{}}{\placeholder{}}">a/b</button>
+            <button type="button" data-math="^{2}">□²</button>
+            <button type="button" data-math="^{3}">□³</button>
+            <button type="button" data-command="deleteBackward">⌫</button>
+        </div>
+        <button type="submit" data-i18n="calculate">Calculate</button>
+    </form>
+    <p id="expand-error" role="alert"></p>
+    <h3 data-i18n="examples">Examples</h3>
+    <div class="expand-examples">
+        <button type="button" class="expand-example" data-latex="3(2x-1)+5">\(3(2x-1)+5\)</button>
+        <button type="button" class="expand-example" data-latex="(x+2)(x-3)">\((x+2)(x-3)\)</button>
+        <button type="button" class="expand-example" data-latex="(2x+1)^{2}">\((2x+1)^2\)</button>
+        <button type="button" class="expand-example" data-latex="(a+b)(a-b)">\((a+b)(a-b)\)</button>
+        <button type="button" class="expand-example" data-latex="2x(y+3)">\(2x(y+3)\)</button>
+        <button type="button" class="expand-example" data-latex="\frac{1}{2}(x+2)">\(\frac12(x+2)\)</button>
+    </div>
+    <hr>
+    <section id="expand-result" aria-live="polite" hidden>
+        <h2 data-i18n="stepByStep">Step-by-step solution</h2>
+        <div id="expand-steps"></div>
+        <h3 data-i18n="expandFinalAnswer">Final answer</h3>
+        <div id="expand-answer"></div>
+    </section>
+</main>
+<footer class="site-footer">
+    <p data-i18n="developerCredit">Developed and maintained by Vėjas Kašėta</p>
+    <p><span data-i18n="sourceCode">Source code:</span>
+        <a href="https://github.com/v4jas2020/math-calculator"
+           target="_blank" rel="noopener noreferrer">GitHub</a>
+        — <span data-i18n="starRepository">Make sure to star it!</span>
+    </p>
+</footer>
 
+<script src="../js/translations.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/render-steps.js"></script>
+<script src="../js/expand-calculator.js"></script>
+<script src="../js/math-editor.js"></script>
 </body>
 </html>
