@@ -1,76 +1,108 @@
-# Math Calculator's
+# Math Calculators
 
-### Official website: https://math-calculator-gold.vercel.app/index.html
-**A free educational maths calculator that explains solutions step by step, showing each and every part of the solution.**
+**Learn the process, not just the answer.**
 
-Math Calculator that helps students understand *how* to solve mathematical problems, not just find the answer, it is a tool used to help learn not just mindlesly get the answer.
+Math Calculators is a free, student-focused website that helps students understand mathematics through detailed, step-by-step solutions.
+
+Instead of simply providing an answer, it explains the calculations using clear mathematical notation and notebook-style workings.
 
 Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club project.
 
-![Python](https://img.shields.io/badge/Python-blue?logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-green?logo=fastapi&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-yellow?logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-## Features:
+---
 
-- Step-by-step mathematical solutions
-- Interactive maths editor
-- Exact answers with fractions and square roots
-- Notebook-style calculations
-- English 🇬🇧 and Lithuanian 🇱🇹 languages are supported.
-- Responsive interface (being improved)
+## Preview
+
+![Math Calculators Website](frontend/assets/images/website-preview.png)
+
+*Interactive mathematical input and step-by-step solutions.*
+
+## Features
+
+- **Step-by-step solutions** — Understand every stage of a calculation.
+- **Visual maths editor** — Enter mathematical expressions using properly formatted symbols.
+- **Exact calculations** — Fractions, square roots and symbolic answers.
+- **Notebook-style workings** — Clear and readable mathematical explanations.
+- **Two languages** — 🇬🇧 English and 🇱🇹 Lithuanian.
+- **Responsive design** — Support for desktop and mobile devices.
 
 ## Calculators
 
 | Calculator | Status |
 |---|---|
-| Quadratic Equations | Working / Available |
-| Fractions |  In development |
-| Linear Equations | 📋 Planned |
-| Expanding Brackets | 📋 Planned |
-| Powers and Roots | 📋 Planned |
-| More calculators | 📋 Planned |
+| Quadratic Equations | Functional |
+| Fractions | Beta |
+| Linear Equations | Functional |
+| Expand Brackets | Beta |
+| Combine Like Terms | Planned |
+| Factorise Expressions | Planned |
+| Powers and Roots | Planned |
+| Percentages | Planned |
+| Geometry Formulas | Planned |
 
-## 🛠️ Technologies / Programing languages used:
+## Technologies
 
-**Frontend:** HTML, CSS, JavaScript, MathLive, MathJax
+| Frontend | Backend |
+|---|---|
+| HTML5 | Python |
+| CSS3 | FastAPI |
+| JavaScript | SymPy |
+| MathLive | |
+| MathJax | |
 
-**Backend:** Python, FastAPI, SymPy
+**Hosting:** Vercel
 
-## 🚀 Getting Started
+## Getting Started
 
 Clone the repository:
 
-`git clone https://github.com/v4jas2020/math-calculator.git`
+```bash
+git clone https://github.com/v4jas2020/math-calculator.git
+cd math-calculator
+```
 
-Install the dependencies from the project directory:
+Install dependencies:
 
-`python -m pip install -r backend/requirements.txt`
+```bash
+python -m pip install -r backend/requirements.txt
+```
 
-Start the server:
+Start the development server:
 
-`python -m uvicorn backend.main:app --reload`
+```bash
+python -m uvicorn backend.main:app --reload
+```
 
-Open **http://127.0.0.1:8000**
+Visit **http://127.0.0.1:8000**.
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [x] Quadratic equation solver
-- [x] Mathematical input editor
+- [x] Fractions calculator
+- [x] Linear equation solver
+- [x] Visual mathematical editor
 - [x] English and Lithuanian support
-- [ ] Complete advanced fractions
-- [ ] Improve mobile support
+- [ ] Finish testing Expand Brackets
+- [ ] Improve advanced mathematical explanations
 - [ ] Add more calculators
-- [ ] Add learning guides
+- [ ] Add educational guides
+- [ ] Improve mobile support
 
-## 🤝 Feedback
+## Contributing
 
-Found a bug or have a suggestion? [Open an issue](https://github.com/v4jas2020/math-calculator/issues).
+Suggestions, bug reports and improvements are welcome.
 
-## ⭐ Support
+[Open an issue](https://github.com/v4jas2020/math-calculator/issues) to report a problem or suggest a feature.
 
-If you like the project, consider [starring the repository](https://github.com/v4jas2020/math-calculator)!
+## Support the Project
+
+If Math Calculators is useful to you, consider [starring the repository](https://github.com/v4jas2020/math-calculator).
 
 ---
 
-*Made and maintained by Vėjas Kašėta (@v4jas2020).*
+**Developed and maintained by Vėjas Kašėta.**
+
+*Created as a Hack Club project.*
