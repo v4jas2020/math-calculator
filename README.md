@@ -106,4 +106,5 @@ If Math Calculators is useful to you, consider [starring the repository](https:/
 **Developed and maintained by Vėjas Kašėta.**
 
 *Created as a Hack Club project.*
--# For the people interested this is being developed during "hackclub terra" week 2, terra week 3, and I plan to finish it in terra week 5 or 6, in total its a far way to go especialy regarding mobile functions.
+
+**For the people interested this is being developed during "hackclub terra" week 2, terra week 3, and I plan to finish it in terra week 5 or 6, in total its a far way to go especialy regarding mobile functions.**
