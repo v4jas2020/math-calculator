@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathlive@0.111.1/mathlive.min.js"></script>
     <title data-i18n="likeTermsPageTitle">
         Combine Like Terms - Math Calculators
     </title>
@@ -29,19 +31,79 @@
 <hr>
 
 <main>
-    <section class="calculator-placeholder">
-        <h2 data-i18n="likeTermsComingSoon">
-            Calculator under development
+    <section>
+        <h2 data-i18n="likeTermsEnter">Enter an expression</h2>
+        <p data-i18n="likeTermsIntro">
+            Group and combine like terms step by step.
+        </p>
+
+        <form id="like-terms-form">
+            <label for="equation" data-i18n="fractionExpression">
+                Expression:
+            </label>
+            <math-field
+                id="equation"
+                math-virtual-keyboard-policy="manual"
+                aria-label="Algebraic expression">
+            </math-field>
+            <div class="math-toolbar" aria-label="Math symbols">
+                <button type="button" data-math="x">x</button>
+                <button type="button" data-math="y">y</button>
+                <button type="button" data-math="a">a</button>
+                <button type="button" data-math="b">b</button>
+                <button type="button" data-math="+">+</button>
+                <button type="button" data-math="-">−</button>
+                <button type="button" data-math="\cdot">×</button>
+                <button type="button" data-math="\div">÷</button>
+                <button type="button"
+                    data-math="\left(\placeholder{}\right)">( )</button>
+                <button type="button"
+                    data-math="\frac{\placeholder{}}{\placeholder{}}">a/b</button>
+                <button type="button" data-math="^{2}">□²</button>
+                <button type="button" data-math="^{3}">□³</button>
+                <button type="button" data-command="deleteBackward">⌫</button>
+            </div>
+            <button type="submit" data-i18n="calculate">
+                Calculate
+            </button>
+        </form>
+        <p id="like-terms-error" role="alert"></p>
+        <h3 data-i18n="examples">Examples</h3>
+        <div class="like-terms-examples">
+            <button type="button" class="like-terms-example"
+                    data-latex="3x+5x-2+7-4x">
+                \(3x+5x-2+7-4x\)
+            </button>
+            <button type="button" class="like-terms-example"
+                    data-latex="4x^{2}+3x-2x^{2}+5x-7">
+                \(4x^2+3x-2x^2^2+5x-7\)
+            </button>
+            <button type="button" class="like-terms-example"
+                    data-latex="3x+5x-2y+7-4x">
+                \(3x+5x-2y+7-4x\)
+            </button>
+            <button type="button" class="like-terms-example"
+                    data-latex="\frac{1}{2}x+\frac{3}{4}x">
+                \(\frac12x+\frac34x\)
+            </button>
+            <button type="button" class="like-terms-example"
+                    data-latex="x=x">
+                \(x-x\)
+            </button>
+        </div>
+    </section>
+
+    <hr>
+    <section id="like-terms-result" aria-live="polite" hidden>
+        <h2 data-i18n="stepByStep">
+            Step-by-step solution
         </h2>
+        <div id="like-terms-steps"></div>
+        <h3 data-i18n="likeTermsFinalAnswer">
+            Final answer
+        </h3>
 
-        <p data-i18n="likeTermsDescription">
-            Step-by-step simplification of algebraic expressions
-            is coming soon.
-        </p>
-
-        <p>
-            Example: 3x + 5x - 2 + 7 -4x = 4x + 5
-        </p>
+        <div id="like-terms-answer"></div>
     </section>
 </main>
 
@@ -59,6 +121,10 @@
     </p>
 </footer>
 
+<script src="../js/api.js"></script>
+<script src="../js/render-steps.js"></script>
+<script src="../js/like-terms-calculator.js"></script>
+<script src="../js/math-editor.js"></script>
 <script src="../js/translations.js"></script>
 </body>
 </html>

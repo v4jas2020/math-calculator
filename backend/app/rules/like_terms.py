@@ -39,7 +39,7 @@ def format_coefficients(coefficients, monomial=None):
         value = number + suffix
         if not parts:
             parts.append(
-                {"-" if coefficient < 0 else ""} + value
+                ("-" if coefficient < 0 else "") + value
             )
         else:
             parts.append(
@@ -90,7 +90,7 @@ def solve_like_terms(expression):
         else:
             powers = ()
             coefficient = sp.Rational(sp.simplify(term))
-        groups.setdefault(powers, [].append(coefficient))
+        groups.setdefault(powers, []).append(coefficient)
     order = sorted(
         groups,
         key=lambda powers: (

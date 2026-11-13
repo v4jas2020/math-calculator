@@ -152,6 +152,17 @@ const translations = {
         likeTermsHeading: "Combine Like Terms",
         combineLikeTermsComingSoon: "Calculator under development",
         likeTermsDescription: "Step-by-step simplification of algebraic expressions is coming soon.",
+        likeTermsEnter: "Enter an expression",
+        likeTermsIntro: "Group and combine like terms step by step.",
+        likeTermsFinalAnswer: "Final answer",
+        likeTermsStepOriginal: "Original Expression",
+        likeTermsStepGroup: "Group like terms",
+        likeTermsStepCoefficients: "Combine the coefficients",
+
+        "Expand brackets before combining like terms.":
+            "Expand brackets before combining like terms.",
+        "Only polynomial terms are supported.":
+            "Only polynomial terms are supported.",
 
     },
     lt: {
@@ -159,7 +170,6 @@ const translations = {
         quadraticPageTitle: "Kvadratinės lygtys - Matematikos skaičiuotuvas",
         mathCalculator: "Matematikos skaičiuotuvai",
         selectCalculator: "Pasirinkite skaičiuotuvą",
-        combineLikeTerms: "Jungiame panašiuosius narius (netrukus)",
         addSubtractExpressions: "Sudėtis ir atimtis su reiškiniais (netrukus)",
         fractions: "Trupmenos",
         fractionPageTitle: "Trupmenos - Matematikos skaičiuotuvas",
@@ -309,6 +319,18 @@ const translations = {
         likeTermsHeading: "Panašiųjų narių sutraukimas",
         likeTermsComingSoon: "Skaičiuotuvas kuriamas",
         likeTermsDescription: "Netrukus galėsite žingsnis po žingsnio supaprastinti algebrinius reiškinius.",
+        likeTermsEnter: "Įveskite reiškinį",
+        likeTermsIntro: "Sugrupuokite ir sutraukite panašiuosius narius.",
+        likeTermsFinalAnswer: "Atsakymas",
+        likeTermsStepOriginal: "Pradinis reiškinys",
+        likeTermsStepGroup: "Sugrupuojame panašiuosius narius",
+        likeTermsStepCoefficients: "Sudedame koeficientus",
+        "Expand brackets before combining like terms.":
+            "Prieš sutraukdami panašiuosius narius, išskleiskite skliaustus.",
+        "Only polynomial terms are supported.":
+            "Palaikomi tik daugianario nariai.",
+
+
 
     }
 };
