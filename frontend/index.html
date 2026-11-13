@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore Math Calculators across Hack Club Terra weeks 2, 3 and 4.">
-    <title>Math Calculators — Versions</title>
+    <title>Math Calculators Version Selection</title>
     <style>
         :root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; }
         * { box-sizing: border-box; }
@@ -18,18 +18,18 @@
             color: #242424;
         }
         main {
-            width: min(100%, 540px);
-            padding: clamp(25px, 6vw, 52px);
-            border: 1px solid #cfcfcf;
-            border-radius: 16px;
-            background: #fff;
+            width: min(100%, 650px);
+            padding: clamp(12px, 3vw, 32px);
+            border: none;
+            border-radius: 0;
+            background: transparent;
             text-align: center;
         }
         h1 {
             margin: 0;
             padding-bottom: 18px;
             border-bottom: 2px solid #333;
-            font-size: clamp(26px, 5vw, 37px);
+            font-size: clamp(28px, 5vw, 40px);
             line-height: 1.2;
             font-weight: 750;
             letter-spacing: -0.025em;
@@ -45,17 +45,17 @@
             min-height: 66px;
             padding: 12px;
             color: #242424;
-            border: 1px solid transparent;
-            border-radius: 9px;
+            border: none;
+            border-radius: 0;
             text-decoration: none;
             font-size: clamp(23px, 5vw, 31px);
             font-weight: 600;
             letter-spacing: -0.015em;
             transition: background .15s, border-color .15s;
         }
-        .version:hover { background: #f0f0f0; border-color: #d8d8d8; }
+        .version:hover { background: transparent; text-decoration: underline; text-underline-offset: 7px; }
         .version:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
-        .version.current { background: #f2f2f2; border-color: #cfcfcf; }
+        .version.current { background: transparent; }
         .beta {
             padding: 5px 9px;
             border-radius: 5px;
@@ -71,7 +71,7 @@
 </head>
 <body>
     <main>
-        <h1>Math Calculators</h1>
+        <h1>Math Calculators<br>Version Selection</h1>
         <nav aria-label="Choose a weekly version">
             <a class="version" href="https://math-calculator-rk2mbjn1u-v4jas2020s-projects.vercel.app/">Week 2</a>
             <a class="version" href="https://math-calculator-11wwfao0c-v4jas2020s-projects.vercel.app/">Week 3</a>
