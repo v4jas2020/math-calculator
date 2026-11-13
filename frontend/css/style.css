@@ -922,3 +922,8 @@ main { flex: 1 0 auto; width: 100%; }
     color: var(--muted);
 }
 
+
+/* Thin divider above the Week 4 calculator menu footer */
+.home-page .site-footer {
+    border-top: 1px solid var(--border, #d5d5d5);
+}
