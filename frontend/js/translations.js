@@ -83,7 +83,7 @@ const translations = {
         mathEditorLoading: "The maths editor is still loading. Please try again.",
         developerCredit: "Developed and maintained by Vėjas Kašėta",
         sourceCode: "Source code:",
-        starRepository: "Make sure to star it!",
+        starRepository: "Make sure to star it on GitHub! ⭐",
         noRealRoots: "No real roots",
         "Subtract the entire right-hand side from both sides.":
             "Subtract the entire right-hand side from both sides.",
@@ -239,7 +239,7 @@ const translations = {
         mathEditorLoading: "Matematinis redaktorius dar įkeliamas. Bandykite dar kartą.",
         developerCredit: "Sukūrė ir prižiūri Vėjas Kašėta",
         sourceCode: "Programos kodas:",
-        starRepository: "Nepamirškite pažymėti projekto žvaigždute!",
+        starRepository: "Nepamirškite pažymėti projekto žvaigždute GitHub! ⭐",
         noRealRoots: "Realiųjų šaknų nėra",
         "Subtract the entire right-hand side from both sides.":
             "Atimame visą dešinę lygties pusę iš abiejų pusių.",
