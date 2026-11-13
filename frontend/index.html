@@ -2,97 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <title data-i18n="homePageTitle">Math Calculators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Math Calculators across Hack Club Terra weeks 2, 3 and 4.">
+    <title>Math Calculators — Versions</title>
+    <style>
+        :root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            padding: 36px 20px;
+            background: #f8f8f8;
+            color: #242424;
+        }
+        main {
+            width: min(100%, 540px);
+            padding: clamp(25px, 6vw, 52px);
+            border: 1px solid #cfcfcf;
+            border-radius: 16px;
+            background: #fff;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            padding-bottom: 18px;
+            border-bottom: 2px solid #333;
+            font-size: clamp(26px, 5vw, 37px);
+            line-height: 1.2;
+            font-weight: 750;
+            letter-spacing: -0.025em;
+            text-transform: uppercase;
+        }
+        nav { display: grid; gap: 12px; margin-top: 24px; }
+        .version {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            min-height: 66px;
+            padding: 12px;
+            color: #242424;
+            border: 1px solid transparent;
+            border-radius: 9px;
+            text-decoration: none;
+            font-size: clamp(23px, 5vw, 31px);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            transition: background .15s, border-color .15s;
+        }
+        .version:hover { background: #f0f0f0; border-color: #d8d8d8; }
+        .version:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+        .version.current { background: #f2f2f2; border-color: #cfcfcf; }
+        .beta {
+            padding: 5px 9px;
+            border-radius: 5px;
+            background: #1d4ed8;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: .04em;
+        }
+        @media (prefers-reduced-motion: reduce) { .version { transition: none; } }
+    </style>
 </head>
-
-<body class="home-page">
-<header>
-    <div class="language-switcher">
-        <button type="button" data-language="en" aria-label="English">🇬🇧</button>
-        <button type="button" data-language="lt" aria-label="Lietuvių">🇱🇹</button>
-    </div>
-    <h1 data-i18n="mathCalculator">Math Calculators</h1>
-</header>
-<main>
-    <section id = "home">
-        <h2 data-i18n="selectCalculator">Select a calculator</h2>
-
-        <table class="calculator-table">
-            <tbody>
-            <tr>
-                <td class="calculator-available">
-                    <a href="calculators/like-terms.html" class="calculator-link">
-                       <span data-i18n="combineLikeTerms">Combine Like Terms</span>
-                    <span class="status-badge status--beta">BETA</span>
-                    </a>
-                </td>
-                <td data-i18n="addSubtractExpressions">Add and Subtract Expressions (Coming soon)</td>
-            </tr>
-            <tr>
-                <td class="calculator-available">
-                    <a href="calculators/fractions.html" class="calculator-link">
-                        <span data-i18n="fractions">Fractions</span>
-                        <span class="status-badge status--beta">BETA</span>
-                    </a>
-                </td>
-                <td class="calculator-available">
-                    <a href="calculators/expand.html" class="calculator-link">
-                        <span data-i18n="expandBrackets">Expand Brackets</span>
-                        <span class="status-badge status--functional">FUNCTIONAL</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td data-i18n="factoriseExpressions">Factorise Expressions (Coming soon)</td>
-                <td class="calculator-available">
-                    <a href="calculators/linear.html" class="calculator-link">
-                        <span data-i18n="linearEquations">Linear Equations</span>
-                        <span class="status-badge status--functional">FUNCTIONAL</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td data-i18n="powersRoots">Powers and Roots (Coming soon)</td>
-                <td data-i18n="percentages">Percentages (Coming soon)</td>
-            </tr>
-            <tr>
-                <td data-i18n="geometryFormulas">Geometry Formulas (Coming soon)</td>
-            <td class="calculator-available">
-                <a href="calculators/quadratic.html" class="calculator-link">
-                    <span data-i18n="quadraticEquations">Quadratic Equations</span>
-                    <span class="status-badge status--functional">FUNCTIONAL</span>
-                </a>
-            </td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-</main>
-<footer class="site-footer">
-    <p data-i18n="developerCredit">
-        Developed and maintained by Vėjas Kašėta. ( v4jas on github )
-    </p>
-
-    <p><a href="versions.html" style="color:inherit;font-weight:600">View weekly versions for Hack Club reviewers</a></p>
-    <p>
-        <span data-i18n="sourceCode">Source code:</span>
-        <a href="https://github.com/v4jas2020/math-calculator"
-           target="_blank"
-           rel="noopener noreferrer">
-           Github
-        </a>
-        — <span data-i18n="starRepository">Make sure to star it on GitHub!</span>
-    </p>
-</footer>
-<script src="js/translations.js"></script>
-<script src="js/api.js"></script>
-<script src="js/render-steps.js"></script>
-<script src="js/calculator.js"></script>
-<script src="js/app.js"></script>
+<body>
+    <main>
+        <h1>Math Calculators</h1>
+        <nav aria-label="Choose a weekly version">
+            <a class="version" href="https://math-calculator-rk2mbjn1u-v4jas2020s-projects.vercel.app/">Week 2</a>
+            <a class="version" href="https://math-calculator-11wwfao0c-v4jas2020s-projects.vercel.app/">Week 3</a>
+            <a class="version current" href="calculators.html">Week 4 <span class="beta">BETA</span></a>
+        </nav>
+    </main>
 </body>
 </html>
-
-
