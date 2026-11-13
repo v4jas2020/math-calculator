@@ -20,6 +20,10 @@ Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club 
 
 *Interactive mathematical input and step-by-step solutions.*
 
+## Weekly versions for reviewers
+
+[**Open the version archive**](https://math-calculator-gold.vercel.app/versions.html) — Terra Week 2, Terra Week 3, and the current development version. Each completed week links to a fixed Sunday-night GitHub snapshot and its hosted app.
+
 ## Features
 
 - **Step-by-step solutions** — Understand every stage of a calculation.
