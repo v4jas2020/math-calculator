@@ -3,12 +3,14 @@ from ..rules.equations import solve_quadratic
 from ..rules.fractions import solve_fractions
 from ..rules.linear import solve_linear
 from ..rules.expand import solve_expand
+from ..rules.like_terms import solve_like_terms
 
 SOLVERS = {
     "quadratic": solve_quadratic,
     "fractions": solve_fractions,
     "linear": solve_linear,
-    "expand": solve_expand
+    "expand": solve_expand,
+    "like_terms": solve_like_terms
 }
 
 
