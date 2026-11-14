@@ -20,7 +20,7 @@ class LikeTermsTests(unittest.TestCase):
     def test_fractions(self):
         self.check_answer("1/2x+3/4x", "5*x/4")
     def test_cancellation(self):
-        self.check_answer("5+4-2", "7")
+        self.check_answer("x-x", "0")
     def test_reject_brackets(self):
         with self.assertRaises(ValueError):
             solve_like_terms("2(x+1)")

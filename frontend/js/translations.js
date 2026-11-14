@@ -163,6 +163,8 @@ const translations = {
             "Expand brackets before combining like terms.",
         "Only polynomial terms are supported.":
             "Only polynomial terms are supported.",
+        linearPageTitle: "Linear Equations - Math Calculators.",
+        equations: "Equation:",
 
     },
     lt: {
@@ -329,8 +331,8 @@ const translations = {
             "Prieš sutraukdami panašiuosius narius, išskleiskite skliaustus.",
         "Only polynomial terms are supported.":
             "Palaikomi tik daugianario nariai.",
-
-
+        linearPageTitle: "Tiesinės lygtys - Matematikos skaičiuotuvai",
+        equations: "Lygtis:",
 
     }
 };

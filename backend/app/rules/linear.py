@@ -66,102 +66,102 @@ def solve_linear(equation):
         if polynomial.degree() > 1:
             raise ValueError("Only first-degree equations are supported")
 
-        steps = []
-        previous_latex = None
-        tex = sp.latex
+    steps = []
+    previous_latex = None
+    tex = sp.latex
 
-        def add_step(title, left, right):
-            nonlocal previous_latex
+    def add_step(title, left, right):
+        nonlocal previous_latex
 
-            latex = rf"{tex(left)} = {tex(right)}"
+        latex = rf"{tex(left)} = {tex(right)}"
 
-            if latex != previous_latex:
-                steps.append({
-                    "title": title,
-                    "latex": latex,
-                })
-                previous_latex = latex
-        add_step("linearStepOriginal", lhs_original, rhs_original)
+        if latex != previous_latex:
+            steps.append({
+                "title": title,
+                "latex": latex,
+            })
+            previous_latex = latex
+    add_step("linearStepOriginal", lhs_original, rhs_original)
 
-        work_lhs = lhs_original
-        work_rhs = rhs_original
+    work_lhs = lhs_original
+    work_rhs = rhs_original
 
-        for _ in range(6):
-            next_lhs = expand_once(work_lhs)
-            next_rhs = expand_once(work_rhs)
+    for _ in range(6):
+        next_lhs = expand_once(work_lhs)
+        next_rhs = expand_once(work_rhs)
 
-            if (
-                tex(next_lhs) == tex(work_lhs)
-                and tex(next_rhs) == tex(work_rhs)
-            ):
-                break
-            work_lhs = next_lhs
-            work_rhs = next_rhs
-            add_step("linearStepExpand", work_lhs, work_rhs)
+        if (
+            tex(next_lhs) == tex(work_lhs)
+            and tex(next_rhs) == tex(work_rhs)
+        ):
+            break
+        work_lhs = next_lhs
+        work_rhs = next_rhs
+        add_step("linearStepExpand", work_lhs, work_rhs)
 
-        if tex(work_lhs) != tex(lhs) or tex(work_rhs) != tex(rhs):
-            add_step("linearStepSimplify", lhs, rhs)
+    if tex(work_lhs) != tex(lhs) or tex(work_rhs) != tex(rhs):
+        add_step("linearStepSimplify", lhs, rhs)
 
-        left_poly = sp.Poly(lhs, variable)
-        right_poly = sp.Poly(rhs, variable)
+    left_poly = sp.Poly(lhs, variable)
+    right_poly = sp.Poly(rhs, variable)
 
-        a = left_poly.coeff_monomial(variable)
-        b = lhs.subs(variable, 0)
-        c = right_poly.coeff_monomial(variable)
-        d = rhs.subs(variable, 0)
+    a = left_poly.coeff_monomial(variable)
+    b = lhs.subs(variable, 0)
+    c = right_poly.coeff_monomial(variable)
+    d = rhs.subs(variable, 0)
 
-        coefficient = sp.expand(a - c)
-        constant = sp.expand(d - b)
+    coefficient = sp.expand(a - c)
+    constant = sp.expand(d - b)
 
-        if c != 0:
-            add_step(
-                "linearStepMoveVariables",
-                sp.expand(coefficient * variable + b),
-                d
-            )
-        if b != 0:
-            add_step(
-                "linearStepMoveConstants",
-                sp.expand(coefficient * variable),
-                constant
-            )
-        if coefficient == 0:
-            solution_type = (
-                "infinite" if constant == 0 else "none"
-            )
-            add_step(
-            "linearStepCompare",
-                sp.Integer(0),
-                constant
-            )
-            final_latex = (
-                r"\text{Infinitely many solutions}"
-                if solution_type == "infinite"
-                else r"\text{No solution}"
-            )
-            return {
-                "type": "linear",
-                "solution_type": solution_type,
-                "variable": str(variable),
-                "solution": None,
-                "steps": steps,
-                "final_answer_latex": final_latex,
-            }
-        solution = sp.cancel(constant / coefficient)
-        if coefficient != 1:
-            add_step(
-                "linearStepDivide",
-                variable,
-                solution
-            )
+    if c != 0:
+        add_step(
+            "linearStepMoveVariables",
+            sp.expand(coefficient * variable + b),
+            d
+        )
+    if b != 0:
+        add_step(
+            "linearStepMoveConstants",
+            sp.expand(coefficient * variable),
+            constant
+        )
+    if coefficient == 0:
+        solution_type = (
+            "infinite" if constant == 0 else "none"
+        )
+        add_step(
+        "linearStepCompare",
+            sp.Integer(0),
+            constant
+        )
+        final_latex = (
+            r"\text{Infinitely many solutions}"
+            if solution_type == "infinite"
+            else r"\text{No solution}"
+        )
         return {
             "type": "linear",
-            "solution_type": "single",
+            "solution_type": solution_type,
             "variable": str(variable),
-            "solution": str(solution),
+            "solution": None,
             "steps": steps,
-            "final_answer_latex": (
-                rf"{tex(variable)} = {tex(solution)}"
-            )
+            "final_answer_latex": final_latex,
         }
+    solution = sp.cancel(constant / coefficient)
+    if coefficient != 1:
+        add_step(
+            "linearStepDivide",
+            variable,
+            solution
+        )
+    return {
+        "type": "linear",
+        "solution_type": "single",
+        "variable": str(variable),
+        "solution": str(solution),
+        "steps": steps,
+        "final_answer_latex": (
+            rf"{tex(variable)} = {tex(solution)}"
+        )
+    }
 

@@ -1,8 +1,4 @@
-from statistics import variance
-
 import sympy as sp
-from sympy import true
-from sympy.core import basic
 
 from .expand import parse_brackets
 
