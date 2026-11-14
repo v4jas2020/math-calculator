@@ -1,4 +1,4 @@
-const likeTermsCalculator = document.getElementById("like-terms-form");
+const likeTermsForm = document.getElementById("like-terms-form");
 
 let lastLikeTermsResult = null;
 let lastLikeTermsLatex = "";
