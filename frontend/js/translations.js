@@ -2,6 +2,7 @@ const translations = {
     en: {
         homePageTitle: "Math Calculators",
         quadraticPageTitle: "Quadratic Equations - Math Calculator",
+        quadraticFinalAnswer: "Final answer",
         mathCalculator: "Math Calculators",
         selectCalculator: "Select a calculator",
         addSubtractExpressions: "Add and Subtract Expressions (Coming soon)",
@@ -170,6 +171,7 @@ const translations = {
     lt: {
         homePageTitle: "Matematikos skaičiuotuvai",
         quadraticPageTitle: "Kvadratinės lygtys - Matematikos skaičiuotuvas",
+        quadraticFinalAnswer: "Atsakymas",
         mathCalculator: "Matematikos skaičiuotuvai",
         selectCalculator: "Pasirinkite skaičiuotuvą",
         addSubtractExpressions: "Sudėtis ir atimtis su reiškiniais (netrukus)",
