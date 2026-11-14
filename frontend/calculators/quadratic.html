@@ -12,15 +12,21 @@
 <body>
 
     <header>
-        <div class="language-switcher">
-            <button type="button" data-language="en" aria-label="English">🇬🇧</button>
-            <button type="button" data-language="lt" aria-label="Lietuvių">🇱🇹</button>
-        </div>
+        <a href="../calculators.html"
+           class="back-link"
+           data-i18n="backToCalculators">
+            Back to calculators
+        </a>
+
         <div class="calculator-page-title">
             <h1 data-i18n="quadraticSolver">Quadratic Equation Solver</h1>
             <span class="status-badge status--functional">FUNCTIONAL</span>
         </div>
-        <a href="../calculators.html" data-i18n="backToCalculators">Back to calculators</a>
+
+        <div class="language-switcher">
+            <button type="button" data-language="en" aria-label="English">🇬🇧</button>
+            <button tpe="button" data-language="lt" aria-label="Lietuvių">🇱🇹</button>
+        </div>
     </header>
 
     <hr>
@@ -28,7 +34,10 @@
     <main>
         <h2 data-i18n="enterEquation">Enter your equation</h2>
 
-        <p><span data-i18n="generalForm">General form:</span> ax<sup>2</sup> + bx + c = 0</p>
+        <p>
+            <span data-i18n="generalForm">General Form</span>
+            ax<sup>2</sup> + bx + c = 0
+        </p>
 
         <form id="quadratic-form">
             <label for="equation" data-i18n="equation">Equation:</label>
@@ -55,15 +64,39 @@
             <button type="submit" data-i18n="calculate">Calculate</button>
         </form>
 
-        <p data-i18n="supportsQuadratics">Supports full and incomplete quadratic equations.</p>
+        <p id="quadratic-error" role="alert"></p>
+        <p data-i18n="supportsQuadratics">
+            Supports full and incomplete quadratic equations.
+        </p>
 
         <h3 data-i18n="examples">Examples</h3>
-        <ul>
-            <li>2x^2 - 5x + 2 = 0</li>
-            <li>x^2 - 9 = 0</li>
-            <li>3x^2 + 6x = 0</li>
-            <li>x^2 = 5x - 3</li>
-        </ul>
+
+        <div class="quadratic-examples">
+            <button type="button" class="quadratic-example"
+                    data-latex="2x^{2}-5x+2=0">
+                \(2x^2-5x+2=0\)
+            </button>
+
+            <button type="button" class="quadratic-example"
+                    data-latex="x^{2}-9=0">
+                \(x^2-9=0\)
+            </button>
+
+            <button type="button" class="quadratic-example"
+                    data-latex="3x^{2}+6x=0">
+                \(3x^2+6x=0\)
+            </button>
+
+            <button type="button" class="quadratic-example"
+                    data-latex="3x^{2}+6x=0">
+                \(3x^2+6x=0\)
+            </button>
+
+            <button type="button" class="quadratic-example"
+                    data-latex="x^{2}=5x-3">
+                \(x^2=5x-3\)
+            </button>
+        </div>
 
         <hr>
 
