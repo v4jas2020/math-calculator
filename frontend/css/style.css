@@ -216,23 +216,6 @@ header h1 {
     text-align: center;
 }
 
-.fraction-examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-.fraction-example {
-    padding: 12px 18px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-.fraction-example:hover {
-    background: #f5f5f5;
-}
 #fraction-error {
     color: #b42318;
 }
@@ -363,20 +346,6 @@ a {
 #equation:focus-within {
     border-color: var(--accent);
     outline: 2px solid var(--accent-soft);
-}
-.math-toolbar button,
-.fraction-example {
-    background: var(--surface);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    cursor: pointer;
-    transition: background 0.15s ease;
-}
-.math-toolbar button:hover,
-.fraction-example:hover {
-    background: var(--soft);
-    border-color: #aaaaaa;
 }
 
 #quadratic-form button[type="submit"],
@@ -622,30 +591,6 @@ a {
         transition: none;
     }
 }
-.linear-examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 18px 0 30px;
-}
-.linear-example {
-    min-height: 48px;
-    padding: 10px 16px;
-    background: var(--surface, #fff);
-    color: var(--text, #242424);
-    border: 1px solid var(--border, #d5d5d5);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-}
-.linear-example:hover {
-    background: var(--soft, #f1f1f1);
-    border-color: #999;
-}
-.linear-example:focus-visible {
-    outline: 2px solid var(--accent, #333);
-    outline-offset: 2px;
-}
 #linear-error {
     color: #a12626;
     margin: 12px 0;
@@ -687,9 +632,6 @@ a {
 @media (max-width: 650px) {
     #linear-steps {
         grid-template-columns: minmax(0, 1fr);
-    }
-    .linear-example {
-        min-height: 44px;
     }
     #linear-answer {
         padding: 12px;
@@ -744,24 +686,6 @@ a {
 }
 
 /* Expand Brackets */
-.expand-examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 18px 0 30px;
-}
-.expand-example {
-    min-height: 48px;
-    padding: 10px 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface);
-    color: var(--text);
-    font-size: 15px;
-    cursor: pointer;
-}
-.expand-example:hover { background: var(--soft); border-color: #999; }
-.expand-example:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 #expand-error { color: #a12626; margin: 12px 0; }
 #expand-error:empty { display: none; }
 #expand-result { margin-top: 30px; }
@@ -864,30 +788,6 @@ main { flex: 1 0 auto; width: 100%; }
 #like-terms-form button[type="submit"]:disabled {
     opacity: 0.55;
     cursor: wait;
-}
-.like-terms-examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 18px 0 30px;
-}
-.like-terms-example {
-    min-height: 48px;
-    padding: 10px 16px;
-    background: var(--surface, #fff);
-    color: var(--text, #242424);
-    border: 1px solid var(--border, #d5d5d5);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-}
-.like-terms-example:hover {
-    background: var(--soft, #f1f1f1);
-    border-color: #999;
-}
-.like-terms-example:focus-visible {
-    outline: 2px solid #333;
-    outline-offset: 2px;
 }
 #like-terms-error {
     color: #a12626;
@@ -1057,29 +957,6 @@ body:not(.home-page) > header {
 #quadratic-result {
     margin-top: 30px;
 }
-.quadratic-examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 18px 0 30px;
-}
-.quadratic-example {
-    min-height: 48px;
-    padding: 10px 16px;
-    background: var(--surface, #fff);
-    color: var(--text, #242424);
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-}
-.quadratic-example:hover {
-    background: var(--soft, #f1f1f1);
-    border-color: #999;
-}
-.quadratic-example:focus-visible {
-    outline: 2px solid var(--accent, #333);
-    outline-offset: 2px;
-}
 #quadratic-steps {
     display: grid;
     grid-template-columns: repeat(
@@ -1125,5 +1002,93 @@ body:not(.home-page) > header {
     #quadratic-answer {
         padding: 12px;
         font-size: 19px;
+    }
+}
+/* Universali mygtuku stilius, kad nereiketu isnaujo rasyti vis */
+:is(
+    .quadratic-examples,
+    .linear-examples,
+    .expand-examples,
+    .fraction-examples,
+    .like-terms-examples
+) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+    margin: 18px 0 30px;
+}
+:is(
+    .quadratic-example,
+    .linear-example,
+    .expand-example,
+    .fraction-example,
+    .like-terms-example
+) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 12px 18px;
+    box-sizing: border-box;
+    background: var(--surface, #fff);
+    color: var(--text, #242424);
+    border: 1px solid var(--border, #d5d5d5);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+    overflow-x: auto;
+    transition: background 0.15s ease,
+    border-color 0.15s ease;;
+}
+:is(
+    .quadratic-example,
+    .linear-example,
+    .expand-example,
+    .fraction-example,
+    .like-terms-example
+):hover {
+    background: var(--soft, #f1f1f1);
+    border-color: #999;
+}
+
+:is(
+    .quadratic-example,
+    .linear-example,
+    .expand-example,
+    .fraction-example,
+    .like-terms-example
+):focus-visible {
+    outline: 2px solid var(--accent, #333);
+    outline-offset: 2px;
+}
+
+/* Mobiliesiems */
+@media (max-width: 650px) {
+    :is(
+        .quadratic-example,
+        .linear-example,
+        .expand-example,
+        .fraction-example,
+        .like-terms-example
+    ) {
+        min-height: 48px;
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    :is(
+        .quadratic-example,
+        .linear-example,
+        .expand-example,
+        .fraction-example,
+        .like-terms-example
+    ) {
+        transition: none;
     }
 }

@@ -14,7 +14,7 @@ async function renderQuadraticSolution(result, originalLatex) {
     }
     container.replaceChildren();
     answer.replaceChildren();
-    const step = result.steps.filter(
+    const steps = result.steps.filter(
         step => step.title !== "Final answer"
     );
     steps.forEach((step, index) => {
@@ -38,7 +38,7 @@ async function renderQuadraticSolution(result, originalLatex) {
     });
     let finalLatex = result.final_answer_latex;
     if (finalLatex === "\\text{No real roots") {
-        finalLatex = `\\text{${t("noRealRoots")}`;
+        finalLatex = `\\text{${t("noRealRoots")}}`;
     }
     answer.textContent = `\\[\\boxed{${finalLatex}}\\]`;
     await window.MathJax.typesetPromise([
@@ -89,6 +89,7 @@ if (quadraticForm) {
                 "quadratic",
                 equation
             );
+            await renderQuadraticSolution(result, originalLatex)
             lastQuadraticResult = result;
             lastQuadraticLatex = originalLatex;
         } catch (error) {
