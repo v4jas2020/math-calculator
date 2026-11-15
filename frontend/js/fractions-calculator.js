@@ -83,6 +83,9 @@ if (fractionForm) {
 
         button.disabled = true;
         errorBox.textContent = "";
+        const resultSection = document.getElementById("fraction-result");
+        resultSection.hidden = true;
+        lastFractionResult = null;
 
         try {
             if (typeof document.getElementById("equation").getValue !== "function") {

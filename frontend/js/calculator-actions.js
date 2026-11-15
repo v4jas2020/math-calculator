@@ -9,6 +9,7 @@
     const resultSection = document.getElementById(`${prefix}-result`);
     const steps = document.getElementById(`${prefix}-answer`);
     const answer = document.getElementById(`${prefix}-error`);
+    const errorBox = document.getElementById(`${prefix}-error`);
 
     if (
         !editor ||

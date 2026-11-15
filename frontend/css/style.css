@@ -1139,7 +1139,7 @@ body:not(.home-page) > header {
 }
 #factorise-answer {
     padding: 18px 20px;
-    background: var(--accent-soft #ebebeb);
+    background: var(--accent-soft, #ebebeb);
     border-left: 3px solid var(--accent, #333);
     border-radius: 0 8px 8px 0;
     overflow-x: auto;
@@ -1179,8 +1179,8 @@ body:not(.home-page) > header {
         background 0.15s ease,
         background-color 0.15s ease;
 }
-.calculator-clear:hover:not(disabled),
-.calculator-copy:hover:not(disabled) {
+.calculator-clear:hover:not(:disabled),
+.calculator-copy:hover:not(:disabled) {
     background: var(--soft, #f1f1f1);
     border-color: #999;
 }
