@@ -30,11 +30,14 @@ async function renderLikeTerms(result, originalLatex) {
     });
     answer.textContent =
         `\\[\\boxed{${result.final_answer_latex}}\\]`;
-    await window.MathJax.typesetPromise({
+
+    await window.MathJax.typesetPromise([
         stepsContainer,
         answer
-    });
+    ]);
+
     resultSection.hidden = false;
+
 }
 if (likeTermsForm) {
     const editor = document.getElementById("equation");

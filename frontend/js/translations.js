@@ -56,7 +56,7 @@ const translations = {
         "Use an integer exponent from 0 to 3.": "Use an integer exponent from 0 to 3.",
 
         factoriseExpressions: "Factorise Expressions",
-        factoriseHeading: "Factorise calculator",
+        factoriseHeading: "Factorise Expressions",
         factorisePageTitle: "Factorise Expressions - Math Calculators",
         factoriseEnter: "Enter an expression",
         factoriseIntro: "Factorise algebraic expressions step by step.",
@@ -226,7 +226,7 @@ const translations = {
         expandPageTitle: "Skliaustų išskleidimas - Matematikos skaičiuotuvai",
         expandHeading: "Skliaustų išskleidimas",
         expandEnter: "Įveskite reiškinį",
-        factoriseHeading: "Reiškinių skaičiutuvas",
+        factoriseHeading: "Reiškinių skaidymas dauginamaisiais",
         expandIntro: "Išskleiskite skliaustus ir sutraukite panašiuosius narius.",
         expandFinalAnswer: "Atsakymas",
         expandStepOriginal: "Pradinis reiškinys",
@@ -244,8 +244,8 @@ const translations = {
 
         factoriseExpressions: "Reiškinių skaidymas dauginamaisiais",
         factorisePageTitle: "Reiškinių skaidymas dauginamaisiais - Matematikos skaičiuotuvai",
-        factoriseEnter: "Reiškinių skaidymas dauginamaisiais",
-        factoriseIntro: "įveskite reiškinį",
+        factoriseEnter: "Įveskite reiškinį",
+        factoriseIntro: "Skaidykite algebrinius reiškinius dauginamaisiais žingsnis po žingsnio.",
         factoriseFinalAnswer: "Atsakymas",
         factoriseStepOriginal: "Pradinis reiškinys",
         factoriseStepSimplify: "Išskleidžiame skliaustus ir sutraukiame narius",
