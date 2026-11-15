@@ -4,13 +4,15 @@ from ..rules.fractions import solve_fractions
 from ..rules.linear import solve_linear
 from ..rules.expand import solve_expand
 from ..rules.like_terms import solve_like_terms
+from ..rules.factorise import solve_factorise
 
 SOLVERS = {
     "quadratic": solve_quadratic,
     "fractions": solve_fractions,
     "linear": solve_linear,
     "expand": solve_expand,
-    "like_terms": solve_like_terms
+    "like_terms": solve_like_terms,
+    "factorise": solve_factorise
 }
 
 
