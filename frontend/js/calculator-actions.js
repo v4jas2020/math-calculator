@@ -7,8 +7,8 @@
     const editor = document.getElementById("equation")
     const submitButton = form.querySelector('button[type=submit]');
     const resultSection = document.getElementById(`${prefix}-result`);
-    const steps = document.getElementById(`${prefix}-answer`);
-    const answer = document.getElementById(`${prefix}-error`);
+    const steps = document.getElementById(`${prefix}-steps`);
+    const answer = document.getElementById(`${prefix}-answer`);
     const errorBox = document.getElementById(`${prefix}-error`);
 
     if (
@@ -78,7 +78,7 @@
     copyButton.insertAdjacentElement("afterend", copyStatus);
 
     function formatAnswer(data) {
-        if (data.topic === "quadratic") {
+        if ((data.type || data.topic) === "quadratic") {
             const roots = data.roots;
             if (Array.isArray(roots)) {
                 if (roots.length === 0) {
@@ -97,7 +97,7 @@
                 );
             }
         }
-        if (data.topic === "linear") {
+        if ((data.type || data.topic) === "linear") {
             if (data.solution_type === "none") {
                 return t("linearNoSolution");
             }
