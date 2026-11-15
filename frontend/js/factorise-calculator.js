@@ -24,7 +24,7 @@ async function renderFactoriseSolution(result, originalLatex) {
         const latex = index === 0
             ? originalLatex
             : step.latex;
-        maths.textContent = '\\[${latex}\\]';
+        maths.textContent = `\\[${latex}\\]`;
         section.append(heading, maths);
         container.appendChild(section);
     });
@@ -42,7 +42,7 @@ if (factoriseForm) {
         'button[type=submit]'
     );
     const errorBox = document.getElementById("factorise-error");
-    const buttom = factoriseForm.querySelector("factorise-result");
+    const resultSection = document.getElementById("factorise-result");
     editor.addEventListener("keydown", event => {
         if (
             event.key === "Enter" &&

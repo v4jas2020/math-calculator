@@ -24,17 +24,17 @@ async function renderLikeTerms(result, originalLatex) {
         const latex = index === 0
             ? originalLatex
             : step.latex;
-        maths.textContent = `\\[${latex}]`;
+        maths.textContent = `\\[${latex}\\]`;
         section.append(heading, maths);
         stepsContainer.appendChild(section);
     });
     answer.textContent =
         `\\[\\boxed{${result.final_answer_latex}}\\]`;
-    resultSection.hidden = false;
     await window.MathJax.typesetPromise({
         stepsContainer,
         answer
     });
+    resultSection.hidden = false;
 }
 if (likeTermsForm) {
     const editor = document.getElementById("equation");
@@ -49,13 +49,13 @@ if (likeTermsForm) {
             !event.isComposing
         ) {
             event.preventDefault();
-            event.stepPropagation();
+            event.stopPropagation();
             if (!button.disabled) {
                 likeTermsForm.requestSubmit();
             }
         }
     }, true);
-    likeTermsFormForm.addEventListener("submit", async event => {
+    likeTermsForm.addEventListener("submit", async event => {
         event.preventDefault();
         if (button.disabled) return;
         button.disabled = true;
