@@ -349,6 +349,7 @@ a {
 }
 
 #quadratic-form button[type="submit"],
+#factorise-form button[type="submit"],
 #fraction-form button[type="submit"],
 #linear-form button[type="submit"],
 #expand-form button[type="submit"] {
@@ -364,12 +365,14 @@ a {
 }
 #quadratic-form button[type="submit"]:hover,
 #fraction-form button[type="submit"]:hover,
+#factorise-form button[type="submit"]:hover,
 #linear-form button[type="submit"]:hover,
 #expand-form button[type="submit"]:hover {
     background: #505050;
 }
 #quadratic-form button[type="submit"]:disabled,
 #fraction-form button[type="submit"]:disabled,
+#factorise-form button[type="submit"]:disabled,
 #linear-form button[type="submit"]:disabled,
 #expand-form button[type="submit"]:disabled {
     opacity: 0.55;
@@ -1011,7 +1014,8 @@ body:not(.home-page) > header {
     .linear-examples,
     .expand-examples,
     .fraction-examples,
-    .like-terms-examples
+    .like-terms-examples,
+    .factorise-examples
 ) {
     display: flex;
     flex-wrap: wrap;
@@ -1024,7 +1028,8 @@ body:not(.home-page) > header {
     .linear-example,
     .expand-example,
     .fraction-example,
-    .like-terms-example
+    .like-terms-example,
+    .factorise-example
 ) {
     display: inline-flex;
     align-items: center;
@@ -1051,7 +1056,8 @@ body:not(.home-page) > header {
     .linear-example,
     .expand-example,
     .fraction-example,
-    .like-terms-example
+    .like-terms-example,
+    .factorise-example
 ):hover {
     background: var(--soft, #f1f1f1);
     border-color: #999;
@@ -1062,7 +1068,8 @@ body:not(.home-page) > header {
     .linear-example,
     .expand-example,
     .fraction-example,
-    .like-terms-example
+    .like-terms-example,
+    .factorise-example
 ):focus-visible {
     outline: 2px solid var(--accent, #333);
     outline-offset: 2px;
@@ -1075,7 +1082,8 @@ body:not(.home-page) > header {
         .linear-example,
         .expand-example,
         .fraction-example,
-        .like-terms-example
+        .like-terms-example,
+        .factorise-example
     ) {
         min-height: 48px;
         padding: 10px 14px;
@@ -1088,8 +1096,64 @@ body:not(.home-page) > header {
         .linear-example,
         .expand-example,
         .fraction-example,
-        .like-terms-example
+        .like-terms-example,
+        .factorise-example
     ) {
         transition: none;
+    }
+}
+#factorise-error {
+    color: #a12626;
+    margin: 12px 0;
+}
+#factorise-error:empty,
+#factorise-result[hidden] {
+    display: none;
+}
+#factorise-result {
+    margin-top: 30px;
+}
+#factorise-steps {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 360px), 1fr)
+    );
+    gap: 16px 24px;
+    align-items: start;
+}
+.factorise-solution-step {
+    min-width: 0;
+    padding: 14px 0;
+    border-top: 1px solid var(--border, #ddd);
+}
+.factorise-solution-step h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.factorise-maths {
+    min-width: 0;
+    overflow-x: auto;
+    font-size: 19px;
+}
+#factorise-answer {
+    padding: 18px 20px;
+    background: var(--accent-soft #ebebeb);
+    border-left: 3px solid var(--accent, #333);
+    border-radius: 0 8px 8px 0;
+    overflow-x: auto;
+    font-size: 22px;
+}
+@media (max-width: 650px) {
+    #factorise-steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .factorise-maths {
+        font-size: 17px;
+    }
+    #factorise-answer {
+        padding: 12px;
+        font-size: 19px;
     }
 }

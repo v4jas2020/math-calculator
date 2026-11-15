@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="factorisePageTitle">Factorise Expressions - Math Calculators</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathlive@0.111.1/mathlive.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="language-switcher">
+        <button type="button" data-language="en" aria-label="English">🇬🇧</button>
+        <button type="button" data-language="lt" aria-label="Lietuvių">🇱🇹</button>
+    </div>
+    <div class="calculator-page-title">
+        <h1 data-i18n="factoriseHeading">Factorise Expressions</h1>
+        <span class="status-badge status--beta">BETA</span>
+    </div>
+    <a href="../calculators.html" data-i18n="backToCalculators">Back to calculators</a>
+</header>
+
+<hr>
+
+<main>
+    <h2 data-i18n="factoriseEnter">Enter an expression</h2>
+
+    <p data-i18n="factoriseIntro">Factorise algebraic expressions step by step</p>
+    <form id="factorise-form">
+        <label for="equation" data-i18n="fractionExpression">
+            Expression:
+        </label>
+        <math-field id="equation" math-virtual-keyboard-policy="manual" aria-label="Algebraic expression"></math-field>
+        <div class="math-toolbar" aria-label="Math symbols">
+            <button type="button" data-math="x">x</button>
+            <button type="button" data-math="y">y</button>
+            <button type="button" data-math="a">a</button>
+            <button type="button" data-math="b">b</button>
+
+            <button type="button" data-math="+">+</button>
+            <button type="button" data-math="-">−</button>
+            <button type="button" data-math="\cdot">×</button>
+            <button type="button" data-math="\div">÷</button>
+
+            <button type="button"
+                    data-math="\left(\placeholder{}\right)">
+                ( )
+            </button>
+
+            <button type="button"
+                    data-math="\frac{\placeholder{}}{\placeholder{}}">
+                a/b
+            </button>
+
+            <button type="button" data-math="^{2}">
+                □²
+            </button>
+            <button type="button" data-math="^{3}">
+                □³
+            </button>
+
+            <button type="button"
+                    data-command="deleteBackward">
+                ⌫
+            </button>
+        </div>
+        <button type="submit" data-i18n="calculate">
+            Calculate
+        </button>
+    </form>
+    <p id="factorise-error" role="alert"></p>
+    <h3 data-i18n="examples">Examples</h3>
+    <div class="factorise-examples">
+        <button type="button"
+                class="factorise-example"
+                data-latex="6x^{2}+9x">
+            \(6x^2+9x\)
+        </button>
+        <button type="button"
+                class="factorise-example"
+                data-latex="x^{2}-9">
+            \(x^2-9\)
+        </button>
+        <button type="button"
+                class="factorise-example"
+                data-latex="3x^{2}-12">
+            \(3x^2-12\)
+        </button>
+        <button type="button"
+                class="fraction-example"
+                data-latex="2x^{2}+7x+3">
+            \(2x^2+7x+3\)
+        </button>
+        <button type="button"
+                class="fraction-example"
+                data-latex="4x^2{2}-9y^{2}">
+            \(4x^2-9y^2\)
+        </button>
+    </div>
+
+    <hr>
+
+    <section id="factorise-result"
+             aria-live="polite"
+             hidden>
+        <h2 data-i18n="stepByStep">
+            Step-by-step solution
+        </h2>
+        <div id="factorise-steps"></div>
+        <h3 data-i18n="factoriseFinalAnswer">
+            Final Answer
+        </h3>
+        <div id="fraction-answer"></div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p data-i18n="developerCredit">
+        Developed and maintained by Vėjas Kašėta. ( v4jas on github )
+    </p>
+    <p>
+        <span data-i18n="sourceCode">Source code:</span>
+        <a href="https://github.com/v4jas2020/math-calculator"
+           target="_blank"
+           rel="noopener noreferrer">
+           Github
+        </a>
+        — <span data-i18n="starRepository">Make sure to star it on GitHub!</span>
+    </p>
+</footer>
+
+<script src="../js/translations.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/render-steps.js"></script>
+<script src="../js/factorise-calculator.js"></script>
+<script src="../js/math-editor.js"></script>
+</body>
+</html>

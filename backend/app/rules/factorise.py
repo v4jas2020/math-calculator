@@ -1,6 +1,6 @@
 import math
 import sympy as sp
-from mpmath import identify
+from jinja2.runtime import identity
 
 from .expand import parse_brackets
 
@@ -70,7 +70,7 @@ def _difference_of_squares(expr, symbols):
     return a, b
 def solve_factorise(expression):
     original = parse_brackets(expression)
-    preliminary = sp.expand(original)
+    preliminary = sp.expand(sp.simplify(original))
 
     symbols = sorted(
         original.free_symbols,
@@ -154,9 +154,9 @@ def solve_factorise(expression):
             a - b, a + b, evaluate=False
         )
         step_expr = (
-            sp.Mul(common, identify, evaluate=False)
+            sp.Mul(common, identity, evaluate=False)
             if common != 1
-            else identify
+            else identity
         )
         steps.append({
             "title": "factoriseStepDifferenceSquares",
