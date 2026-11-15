@@ -1,6 +1,5 @@
 import math
 import sympy as sp
-from jinja2.runtime import identity
 
 from .expand import parse_brackets
 
