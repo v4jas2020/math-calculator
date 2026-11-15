@@ -122,3 +122,6 @@ document.addEventListener("languagechange", () => {
         });
     }
 });
+document.addEventListener("calculatorcleared", () => {
+    lastQuadraticResult = null;
+});

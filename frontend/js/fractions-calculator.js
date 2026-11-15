@@ -128,3 +128,6 @@ document.addEventListener("languagechange", () => {
         });
     }
 });
+document.addEventListener("calculatorcleared", () => {
+    lastFractionResult = null;
+});

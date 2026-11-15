@@ -109,3 +109,6 @@ document.addEventListener("languagechange", () => {
         });
     }
 });
+document.addEventListener("calculatorcleared", () => {
+    lastLikeTermsResult = null;
+});

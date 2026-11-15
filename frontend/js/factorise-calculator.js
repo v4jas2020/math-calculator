@@ -114,7 +114,9 @@ document.addEventListener("languagechange", () => {
         });
     }
 });
-
+document.addEventListener("calculatorcleared", () => {
+    lastFactoriseResult = null;
+});
 
 
 

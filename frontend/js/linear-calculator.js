@@ -111,3 +111,6 @@ document.addEventListener("languagechange", () => {
         });
     }
 });
+document.addEventListener("calculatorcleared", () => {
+    lastLinearResult = null;
+});

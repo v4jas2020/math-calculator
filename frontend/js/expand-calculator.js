@@ -83,3 +83,6 @@ document.addEventListener("languagechange", () => {
         });
     }
 });
+document.addEventListener("calculatorcleared", () => {
+    lastExpandResult = null;
+});

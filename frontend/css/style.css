@@ -1157,3 +1157,70 @@ body:not(.home-page) > header {
         font-size: 19px;
     }
 }
+.calculator-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+.calculator-clear,
+.calculator-copy {
+    min-height: 44px;
+    padding: 12px 20px;
+    border: 1px solid var(--border, #d5d5d5);
+    background: var(--surface, #fff);
+    color: var(--text, #242424);
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        background-color 0.15s ease;
+}
+.calculator-clear:hover:not(disabled),
+.calculator-copy:hover:not(disabled) {
+    background: var(--soft, #f1f1f1);
+    border-color: #999;
+}
+.calculator-clear:disabled,
+.calculator-copy:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+.calculator-clear:focus-visible,
+.calculator-copy:focus-visible {
+    outline: 2px solid var(--accent, #333);
+    outline-offset: 2px;
+}
+.calculator-copy {
+    margin-top: 16px;
+}
+.calculator-copy-status {
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 14px;
+    color: var(--muted, #666);
+}
+.calculator-copy-status:empty {
+    display: none;
+}
+@media (max-width: 650px) {
+    .calculator-actions {
+        width: 100%;
+        max-width: 620px;
+        gap: 8px;
+    }
+    .calculator-actions > button {
+        flex: 1 1 130px;
+        min-height: 48px;
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+    .calculator-copy {
+        min-height: 48px;
+        padding: 12px 18px;
+        max-width: 100%;
+    }
+}
