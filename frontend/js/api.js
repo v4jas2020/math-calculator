@@ -17,5 +17,10 @@ async function requestSolution(topic, equation) {
             : t("The calculation could not be completed")
      );
  }
+ document.dispatchEvent(
+     new CustomEvent("calculatoranswer", {
+         detail: data
+     })
+ );
  return data;
 }
