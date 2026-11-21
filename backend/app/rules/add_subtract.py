@@ -1,6 +1,5 @@
 from collections import defaultdict
 import sympy as sp
-from docutils.transforms import parts
 
 from .expand import (
     parse_brackets,
