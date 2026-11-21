@@ -1,0 +1,31 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/</loc>
+    </url>
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/calculators.html</loc>
+    </url>
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/versions.html</loc>
+    </url>
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/calculators/quadratic.html</loc>
+    </url>
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/calculators/linear.html</loc>
+    </url>
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/calculators/fractions.html</loc>
+    </url>
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/calculators/expand.html</loc>
+    </url>
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/calculators/like-terms.html</loc>
+    </url>
+    <url>
+        <loc>https://math-calculator-gold.vercel.app/calculators/factorise.html</loc>
+    </url>
+</urlset>
