@@ -37,7 +37,7 @@ async function renderQuadraticSolution(result, originalLatex) {
         container.appendChild(section);
     });
     let finalLatex = result.final_answer_latex;
-    if (finalLatex === "\\text{No real roots") {
+    if (finalLatex === "\\text{No real roots}") {
         finalLatex = `\\text{${t("noRealRoots")}}`;
     }
     answer.textContent = `\\[\\boxed{${finalLatex}}\\]`;
