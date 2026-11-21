@@ -80,7 +80,7 @@ function latexToEquation(latex, allowRoots = false) {
     return expression
         .replace(/\)(?=\()/g, ")*")
         .replace(/\)(?=[a-zA-Z0-9])/g, ")*")
-        .replace(/\(\d)(?=sqrt\()/g, "$1*")
+        .replace(/(\d)(?=sqrt\()/g, "$1*")
         .replace(/(\d)(?=\()/g, "$1*");
 }
 
