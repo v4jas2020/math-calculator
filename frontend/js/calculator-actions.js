@@ -78,7 +78,7 @@
     copyButton.insertAdjacentElement("afterend", copyStatus);
 
     function formatAnswer(data) {
-        if ((data.type || data.topic) === "quadratic") {
+        if ((data.topic || data.type) === "quadratic") {
             const roots = data.roots;
             if (Array.isArray(roots)) {
                 if (roots.length === 0) {
@@ -97,7 +97,7 @@
                 );
             }
         }
-        if ((data.type || data.topic) === "linear") {
+        if ((data.topic || data.type) === "linear") {
             if (data.solution_type === "none") {
                 return t("linearNoSolution");
             }

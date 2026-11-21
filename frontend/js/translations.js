@@ -267,7 +267,6 @@ const translations = {
         factoriseStepNoFactors: "Daugiau neišskaidoma recionaliųjų skaičių strityje",
         "Only polynomial expressions are supported.":
             "Palaikomi tik daugianariai.",
-        linearEquations: "Tiesinės lygtys (netrukus)",
         powersRoots: "Laipsniai ir šaknys (netrukus)",
         percentages: "Procentai (netrukus)",
         geometryFormulas: "Geometrijos formulės (netrukus)",
@@ -377,6 +376,24 @@ const translations = {
             "Palaikomi tik daugianario nariai.",
         linearPageTitle: "Tiesinės lygtys - Matematikos skaičiuotuvai",
         equations: "Lygtis:",
+        "Interpret the discriminant": "Įvertiname diskriminantą",
+        "Recognise the square": "Atpažįstame tikslųjį kvadratą",
+        "Take the exact square root": "Apskaičiuojam tiksliąją kvadratinę šaknį",
+        "Root 1: formula": "Pirmosios šaknies formulė",
+        "Root 1: substitute values": "Įstatome pirmosios šaknies reikšmes",
+        "Root 1: evaluate signs and denominator": "Apskaičiuojame ženklus ir vardiklį",
+        "Root 1: simplify numerator": "Suprastiname pirmosios šaknies skaitiklį",
+        "Root 1: exact answer": "Pirmoji šaknis",
+
+        "Root 2: formula": "Antrosios šaknies formulė",
+        "Root 2: substitute values": "Įstatome antrosios šaknies reikšmes",
+        "Root 2: evaluate signs and denominator": "Apskaičiuojame ženklus ir vardiklį",
+        "Root 2: simplify numerator": "Suprastiname antrosios šaknies skaitiklį",
+        "Root 2: exact answer": "Antroji šaknis",
+        "Subtract the entire right-hand side from both sides.":
+            "Iš abiejų lygties pusių atimame dešiniosios pusės reiškinį.",
+        "A negative discriminant has no real roots.":
+            "Neigiamas diskriminantas neturi realiųjų šaknų.",
 
     }
 };
