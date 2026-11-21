@@ -22,7 +22,7 @@ Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club 
 
 ## Weekly versions for reviewers
 
-[**Open the version archive**](https://math-calculator-gold.vercel.app/versions.html) — Terra Week 2, Terra Week 3, and the current development version. Each completed week links to a fixed Sunday-night GitHub snapshot and its hosted app.
+[**Open the version selection**](https://math-calculator-gold.vercel.app/versions.html) — Terra Week 2, Terra Week 3, and the [Week 4 source archive](https://github.com/v4jas2020/math-calculator/tree/015dd55f18c02fa4ff97a5605e543d61669ba11f) are preserved. Week 5 is the current development version. The Week 4 code is pinned to the final November 15 commit; its own Vercel deployment link is pending.
 
 ## Features
 
