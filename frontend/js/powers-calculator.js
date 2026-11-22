@@ -27,7 +27,7 @@ async function renderPowers(result, originalLatex) {
         const latex = index === 0
             ? originalLatex
             : step.latex;
-        maths.textContent = `\\[${latex}\\`;
+        maths.textContent = `\\[${latex}\\]`;
 
         section.appendChild(heading, maths);
         container.appendChild(section);
@@ -75,7 +75,7 @@ if (powersForm) {
             }
             const originalLatex = editor.value;
             const expression = latexToEquation(originalLatex)
-                .replace(/(\d)(?=[a -zA-Z])/g, "$1*");
+                .replace(/(\d)(?=[a-zA-Z])/g, "$1*");
             if (!expression.trim()) {
                 throw new Error(t("invalidMathExpression"));
             }
