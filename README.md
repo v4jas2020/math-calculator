@@ -8,7 +8,7 @@ Instead of simply providing an answer, it explains the calculations using clear 
 
 Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club project.
 
-### Development progress — Week 5 archive
+### Development progress — Week 5
 
 **8 of 18 planned calculators available (44%)** — 6 functional, 2 in beta, 10 planned.
 
@@ -32,7 +32,7 @@ Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club 
 
 ## Weekly versions for reviewers
 
-[**Open the version selection**](https://math-calculator-gold.vercel.app/) — Week 2, Week 3, and the [Week 4 archived website](https://math-calculator-rmv2enz3a-v4jas2020s-projects.vercel.app/) are preserved. **Week 5 is archived at the commit titled “Updated readme a bit :3 final commit. -Archiving week 5 from this commit.”** The main website may continue to change after this snapshot.
+[**Open the version selection**](https://math-calculator-gold.vercel.app/) — Week 2, Week 3, and the [Week 4 archived website](https://math-calculator-rmv2enz3a-v4jas2020s-projects.vercel.app/) are preserved. The main website may continue to change after this snapshot.
 
 ## Features
 
