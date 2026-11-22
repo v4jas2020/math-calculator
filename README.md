@@ -8,6 +8,16 @@ Instead of simply providing an answer, it explains the calculations using clear 
 
 Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club project.
 
+### Development progress — Week 5 archive
+
+**8 of 18 planned calculators available (44%)** — 6 functional, 2 in beta, 10 planned.
+
+![Calculator progress: 44%](https://img.shields.io/badge/Calculator%20progress-44%25-555555?style=flat-square)
+
+`████████░░░░░░░░░░` **8 / 18**
+
+*Progress measures calculator availability, not overall project completion. Week 5 is archived at this README update; further improvements can continue in future weeks.*
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
@@ -22,7 +32,7 @@ Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club 
 
 ## Weekly versions for reviewers
 
-[**Open the version selection**](https://math-calculator-gold.vercel.app/versions.html) — Terra Week 2, Terra Week 3, and the [Week 4 archived website](https://math-calculator-rmv2enz3a-v4jas2020s-projects.vercel.app/) are preserved. Week 5 is the current development version. The Week 4 website and code are fixed to the final November 15 deployment and commit.
+[**Open the version selection**](https://math-calculator-gold.vercel.app/) — Week 2, Week 3, and the [Week 4 archived website](https://math-calculator-rmv2enz3a-v4jas2020s-projects.vercel.app/) are preserved. **Week 5 is archived at the commit titled “Updated readme a bit :3 final commit. -Archiving week 5 from this commit.”** The main website may continue to change after this snapshot.
 
 ## Features
 
@@ -33,19 +43,30 @@ Developed by **[Vėjas Kašėta](https://github.com/v4jas2020)** as a Hack Club 
 - **Two languages** — 🇬🇧 English and 🇱🇹 Lithuanian.
 - **Responsive design** — Support for desktop and mobile devices.
 
-## Calculators
+## Calculator progress
 
 | Calculator | Status |
 |---|---|
 | Quadratic Equations | Functional |
-| Fractions | Beta |
 | Linear Equations | Functional |
+| Fractions | Functional |
 | Expand Brackets | Functional |
-| Combine Like Terms | Planned |
-| Factorise Expressions | Planned |
-| Powers and Roots | Planned |
+| Combine Like Terms | Functional |
+| Add & Subtract Expressions | Functional |
+| Simplifying Square Roots | Beta |
+| Powers & Exponents | Beta |
 | Percentages | Planned |
+| Radical Fractions | Planned |
+| Inequalities | Planned |
+| Systems of Equations | Planned |
 | Geometry Formulas | Planned |
+| Polynomial Division | Planned |
+| Functions & Graphing | Planned |
+| Trigonometry | Planned |
+| Logarithms | Planned |
+| Universal Math Solver | Planned |
+
+*Statuses match the [calculator catalog](https://math-calculator-gold.vercel.app/calculators.html) at the end of Week 5.*
 
 ## Technologies
 
@@ -91,6 +112,7 @@ Visit **http://127.0.0.1:8000**.
 - [x] English and Lithuanian support
 - [x] Finish testing Expand Brackets
 - [ ] Improve advanced mathematical explanations
+- [x] Launch 8 calculator pages (6 functional, 2 beta)
 - [ ] Add more calculators
 - [ ] Add educational guides
 - [ ] Improve mobile support
@@ -111,4 +133,4 @@ If Math Calculators is useful to you, consider [starring the repository](https:/
 
 *Created as a Hack Club project.*
 
-**For the people interested this is being developed during "hackclub terra" week 2, terra week 3, and I plan to finish it in terra week 5 or 6, in total its a far way to go especialy regarding mobile functions.**
+**Development began during Hack Club Terra Weeks 2 and 3. Week 5 is now archived; more calculators, explanations, and mobile improvements remain planned.**
