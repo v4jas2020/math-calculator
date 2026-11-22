@@ -1,10 +1,10 @@
-const addSubtractCalculator = document.getElementById("add-subtract-form");
+const addSubtractForm = document.getElementById("add-subtract-form");
 
 let lastAddSubtractResult = null;
 let lastAddSubtractLatex = "";
 
 async function renderAddSubtractSolution(result, originalLatex) {
-    const container = document.getElementById("add-subtract-step");
+    const container = document.getElementById("add-subtract-steps");
     const answer = document.getElementById("add-subtract-answer");
     const resultSection = document.getElementById("add-subtract-result");
 
@@ -39,7 +39,7 @@ async function renderAddSubtractSolution(result, originalLatex) {
         container,
         answer
     ]);
-    result.hidden = false;
+    resultSection.hidden = false;
 }
 
 if (addSubtractForm) {
