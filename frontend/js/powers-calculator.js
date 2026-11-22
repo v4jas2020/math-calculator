@@ -33,7 +33,7 @@ async function renderPowers(result, originalLatex) {
         container.appendChild(section);
     });
     answer.textContent =
-        '\\[\\boxed{${result.final_answer_latex}}\\]';
+        `\\[\\boxed{${result.final_answer_latex}}\\]`;
     resultSection.hidden = false;
     await window.MathJax.typesetPromise([
         container,
@@ -70,7 +70,7 @@ if (powersForm) {
         lastPowersResult = null;
 
         try {
-            if (typeof editor._getvalue !== "function") {
+            if (typeof editor.getValue !== "function") {
                 throw new Error(t("mathEditorLoading"));
             }
             const originalLatex = editor.value;
