@@ -6,8 +6,8 @@
           content="width=device-width, initial-scale=1.0">
     <title data-i18n="squareRootsPageTitle">Simplifying Square Roots - Math Calculators</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml/js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@0.111.1/mathlive.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>  <!--My genius brain tried to write this from memory, as you may see in the last commit it did not work. -->
+    <script defer src="https://cdn.jsdelivr.net/npm/mathlive@0.111.1/mathlive.min.js"></script> <!--Same here! -->
 </head>
 
 <body>
@@ -47,6 +47,11 @@
             <button type="button" data-math="-">−</button>
             <button type="button" data-math="\cdot">×</button>
             <button type="button" data-math="\div">÷</button>
+
+            <button type="button"
+                     data-math="\sqrt{\placeholder{}}">
+                √
+            </button>
 
             <button type="button"
                     data-math="\left(\placeholder{}\right)">
@@ -92,7 +97,7 @@
         <button type="button"
                 class="square-roots-example"
                 data-latex="\sqrt{144}">
-            \(\sqrt{144}
+            \(\sqrt{144}\) <!-- there was a missing mathJax delimiter that I did not see -->
         </button>
 
         <button type="button"
@@ -122,7 +127,7 @@
         <h2 data-i18n="stepByStep">
             Step-by-step solution
         </h2>
-        <div id="square-roots-step"></div>
+        <div id="square-roots-steps"></div>
         <h3 data-i18n="squareRootsFinalAnswer">Final Answer</h3>
         <div id="square-roots-answer"></div>
     </section>
