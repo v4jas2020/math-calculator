@@ -16,79 +16,135 @@
     </div>
     <h1 data-i18n="mathCalculator">Math Calculators</h1>
 </header>
-<main>
-    <section id = "home">
-        <h2 data-i18n="selectCalculator">Select a calculator</h2>
 
-        <table class="calculator-table">
-            <tbody>
-            <tr>
-                <td class="calculator-available">
-                    <a href="calculators/like-terms.html" class="calculator-link">
-                       <span data-i18n="combineLikeTerms">Combine Like Terms</span>
-                    <span class="status-badge status--functional">FUNCTIONAL</span>
-                    </a>
-                </td>
-                <td class="calculator-available">
-                    <a href="calculators/add-subtract.html" class="calculator-link">
-                        <span data-i18n="addSubtractExpressions">Add and Subtract Expressions</span>
-                        <span class="status-badge status--beta">BETA</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td class="calculator-available">
-                    <a href="calculators/fractions.html" class="calculator-link">
-                        <span data-i18n="fractions">Fractions</span>
-                        <span class="status-badge status--functional">FUNCTIONAL</span>
-                    </a>
-                </td>
-                <td class="calculator-available">
-                    <a href="calculators/expand.html" class="calculator-link">
-                        <span data-i18n="expandBrackets">Expand Brackets</span>
-                        <span class="status-badge status--functional">FUNCTIONAL</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td class="calculator-available">
-                    <a href="calculators/factorise.html" class="calculator-link">
-                        <span data-i18n="factoriseExpressions">Factorise Expressions</span>
-                        <span class="status-badge status--functional">FUNCTIONAL</span>
-                    </a>
-                </td>
-                <td class="calculator-available">
-                    <a href="calculators/linear.html" class="calculator-link">
-                        <span data-i18n="linearEquations">Linear Equations</span>
-                        <span class="status-badge status--functional">FUNCTIONAL</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td class="calculator-available">
-                    <a href="calculators/square-roots.html" class="calculator-link">
-                        <span data-i18n="squareRootsHeading">Simplifying Square Roots</span>
-                        <span class="status-badge status--beta">BETA</span>
-                    </a>
-                </td>
-                <td class="calculator-available">
-                    <a href="calculators/powers.html" class="calculator-link">
-                        <span data-i18n="powersHeading">Powers & Exponents</span>
-                        <span class="status-badge status--beta">BETA</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td data-i18n="geometryFormulas">Geometry Formulas (Coming soon)</td>
-            <td class="calculator-available">
-                <a href="calculators/quadratic.html" class="calculator-link">
-                    <span data-i18n="quadraticEquations">Quadratic Equations</span>
+<main id="home">
+    <p class="catalog-intro" data-i18n="catalogIntro">
+        Explore step-by-step math calculators.
+        More tools are being developed.
+    </p>
+
+    <section aria-labelledby="available-title">
+        <h2 id="available-title" data-i18n="catalogAvailable">Available calculators</h2>
+
+        <div class="catalog-grid">
+            <article class="catalog-card">
+                <a href="calculators/quadratic.html">
+                    <h3 data-i18n="quadraticEquations">Quadratic Equations</h3>
                     <span class="status-badge status--functional">FUNCTIONAL</span>
                 </a>
-            </td>
-            </tr>
-            </tbody>
-        </table>
+            </article>
+
+            <article class="catalog-card">
+                <a href="calculators/linear.html">
+                    <h3 data-i18n="linearEquations">Linear Equations</h3>
+                    <span class="status-badge status--functional">FUNCTIONAL</span>
+                </a>
+            </article>
+
+            <article class="catalog-card">
+                <a href="calculators/fractions.html">
+                    <h3 data-i18n="fractions">Fractions</h3>
+                    <span class="status-badge status--functional">FUNCTIONAL</span>
+                </a>
+            </article>
+
+            <article class="catalog-card">
+                <a href="calculators/expand.html">
+                    <h3 data-i18n="expandBrackets">Expand Brackets</h3>
+                    <span class="status-badge status--functional">FUNCTIONAL</span>
+                </a>
+            </article>
+
+            <article class="catalog-card">
+                <a href="calculators/like-terms.html">
+                    <h3 data-i18n="combineLikeTerms">Combine Like Terms</h3>
+                    <span class="status-badge status--functional">FUNCTIONAL</span>
+                </a>
+            </article>
+
+            <article class="catalog-card">
+                 <a href="calculators/add-subtract.html">
+                     <h3 data-i18n="addSubtractExpressions">Add & Subtract Expressions</h3>
+                     <span class="status-badge status--functional">FUNCTIONAL</span>
+                 </a>
+            </article>
+
+            <article class="catalog-card">
+                <a href="calculators/square-roots.html">
+                    <h3 data-i18n="squareRootsHeading">Simplifying Square Roots</h3>
+                    <span class="status-badge status--beta">BETA</span>
+                </a>
+            </article>
+
+            <article class="catalog-card">
+                <a href="calculators/powers.html">
+                    <h3 data-i18n="powersHeading">Powers & Exponents</h3>
+                    <span class="status-badge status--beta">BETA</span>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <section class="catalog-planned-section"
+             aria-labelledby="planned-title">
+        <h2 id="planned-title" data-i18n="catalogPlanned">Planned Calculators</h2>
+
+        <div class="catalog-grid">
+            <article class="catalog-card catalog-card--planned">
+                <h3 data-i18n="catalogPercentages">Percentages</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming Soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card--planned">
+                <h3 data-i18n="catalogRadicals">Radical Fractions</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card--planned">
+                <h3 data-i18n="catalogInequalities">Inequalities</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card--planned">
+                <h3 data-i18n="catalogSystems">Systems of Equations</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card--planned">
+                <h3 data-i18n="catalogGeometry">Geometry Formulas</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card--planned">
+                <h3 data-i18n="catalogGeometry">Geometry Formulas</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card--planned">
+                <h3 data-i18n="catalogPolynomial">Polynomial Division</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming Soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card--planned">
+                <h3 data-i18n="catalogFunctions">Functions & Graphing</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming Soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card-planned">
+                <h3 data-i18n="catalogTrigonometry">Trigonometry</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming soon</span>
+            </article>
+
+            <article class="catalog-card catalog-card-planned">
+                <h3 data-i18n="catalogLogarithms">Logarithms</h3>
+                <span class="catalog-soon" data-i18n="catalogSoon">Coming soon</span>
+            </article>
+
+            <article class="catalog-card catalog card-planned">
+                <h3 data-i18n="catalogUniversal">Universal Math Solver</h3>
+                <span class="catalog-soon" data-i18n="catalogFuture">Future projects</span>
+            </article>
+        </div>
     </section>
 </main>
 <footer class="site-footer">
@@ -106,8 +162,6 @@
     </p>
 </footer>
 <script src="js/translations.js"></script>
-<script src="js/api.js"></script>
-<script src="js/render-steps.js"></script>
 </body>
 </html>
 
