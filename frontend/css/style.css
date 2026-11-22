@@ -1526,7 +1526,7 @@ body:not(.home-page) > header {
     font-size: 22px;
 }
 @media (max-width: 650px) {
-    #powers-step {
+    #powers-steps {
         grid-template-columns: minmax(0, 1fr);
     }
     .powers-example {
