@@ -6,6 +6,7 @@ from ..rules.expand import solve_expand
 from ..rules.like_terms import solve_like_terms
 from ..rules.factorise import solve_factorise
 from ..rules.add_subtract import solve_add_subtract
+from ..rules.square_roots import solve_square_roots
 
 SOLVERS = {
     "quadratic": solve_quadratic,
@@ -15,6 +16,7 @@ SOLVERS = {
     "like_terms": solve_like_terms,
     "factorise": solve_factorise,
     "add_subtract": solve_add_subtract,
+    "square_roots": solve_square_roots,
 }
 
 
