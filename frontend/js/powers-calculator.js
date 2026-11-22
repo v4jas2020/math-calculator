@@ -4,41 +4,39 @@ let lastPowersResult = null;
 let lastPowersLatex = "";
 
 async function renderPowers(result, originalLatex) {
-    const container = document.getElementById("powers-steps")
+    const container = document.getElementById("powers-steps");
     const answer = document.getElementById("powers-answer");
-    const resultSection = document.getElementById("powers-result")
-
+    const resultSection = document.getElementById("powers-result");
     await waitForMathJax();
-
     if (window.MathJax.typesetClear) {
         window.MathJax.typesetClear([container, answer]);
     }
     container.replaceChildren();
     answer.replaceChildren();
-
-    result.steps.forEach((step, index) => {
+    for (const [index, step] of result.steps.entries()) {
         const section = document.createElement("section");
         section.className = "powers-solution-step";
         const heading = document.createElement("h3");
         heading.textContent = `${index + 1}) ${t(step.title)}`;
         const maths = document.createElement("div");
         maths.className = "powers-maths";
-
         const latex = index === 0
             ? originalLatex
             : step.latex;
-        maths.textContent = `\\[${latex}\\]`;
-
-        section.appendChild(heading, maths);
+        const renderedMath = await MathJax.tex2chtmlPromise(
+            latex,
+            { display: true }
+        );
+        maths.appendChild(renderedMath);
+        section.append(heading, maths);
         container.appendChild(section);
-    });
-    answer.textContent =
-        `\\[\\boxed{${result.final_answer_latex}}\\]`;
+    }
+    const finalMath = await MathJax.tex2chtmlPromise(
+        `\\boxed{${result.final_answer_latex}}`,
+        { display: true }
+    );
+    answer.appendChild(finalMath);
     resultSection.hidden = false;
-    await window.MathJax.typesetPromise([
-        container,
-        answer
-    ]);
 }
 if (powersForm) {
     const editor = document.getElementById("equation");
