@@ -33,7 +33,7 @@ def solve_add_subtract(expression):
         key=lambda symbol: symbol.name
     )
     steps = [{
-        "title": "addSubtractOriginal",
+        "title": "addSubtractStepOriginal",
         "latex": sp.latex(original)
     }]
     def add_step(title, latex):

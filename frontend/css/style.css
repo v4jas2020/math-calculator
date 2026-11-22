@@ -1224,3 +1224,127 @@ body:not(.home-page) > header {
         max-width: 100%;
     }
 }
+#add-subtract-form button[type="submit"] {
+    min-height: 44px;
+    padding: 12px 24px;
+    background: var(--accent, #333);
+    color: #ffffff;
+    border: 1px solid var(--accent, #333);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+#add-subtract-form button[type="submit"]:hover {
+    background: #505050;
+}
+#add-subtract-form button[type="submit"]:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
+#add-subtract-form button[type="submit"]:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 3px;
+}
+.add-subtract-examples {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+    margin: 18px 0 30px;
+}
+.add-subtract-example {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    max-width: 100%;
+    padding: 12px 18px;
+    background: var(--surface, #fff);
+    color: var(--text, #242424);
+    border: 1px solid var(--border, #d5d5d5);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    overflow-x: auto;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+.add-subtract-example:hover {
+    background: var(--soft, #f1f1f1);
+    border-color: #999;
+}
+.add-subtract-example:focus-visible {
+    outline: 2px solid var(--accent, #333);
+    outline-offset: 2px;
+}
+#add-subtract-error {
+    color: #a12626;
+    margin: 12px 0;
+}
+#add-subtract-error:empty,
+#add-subtract-result[hidden] {
+    display: none;
+}
+#add-subtract-result[hidden] {
+    display: none;
+}
+#add-subtract-result {
+    margin-top: 30px;
+}
+#add-subtract-steps {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 360px), 1fr)
+    );
+    gap: 16px 24px;
+    align-items: start;
+}
+.add-subtract-solution-step {
+    min-width: 0;
+    padding: 14px 0;
+    border-top: 1px solid var(--border, #ddd);
+}
+.add-subtract-solution-step h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.add-subtract-amths {
+    min-width: 0;
+    overflow-x: auto;
+    font-size: 19px;
+}
+#add-subtract-answer {
+    padding: 18px 20px;
+    background: var(--accent-soft, #ebebeb);
+    border-left: 3px solid var(--accent, #333);
+    border-radius: 0 8px 8px 0;
+    overflow-x: auto;
+    font-size: 22px;
+}
+@media (max-width: 650px) {
+    #add-subtract-steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .add-subtract-example {
+        min-height: 48px;
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+    .add-subtract-maths {
+        font-size: 17px;
+    }
+    #add-subtract-answer {
+        padding: 12px;
+        font-size: 19px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .add-subtract-example {
+        transition: none;
+    }
+}
