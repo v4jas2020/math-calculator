@@ -5,18 +5,26 @@ import sympy as sp
 MAX_EXPONENT = 12
 MAX_NODES = 70
 
+# this was fixed by AI sadly I could not figure out the problem.
 def _exponent(node):
     if isinstance(node, ast.Constant) and type(node.value) is int:
         value = node.value
-    elif isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
+    elif isinstance(node, ast.UnaryOp) and isinstance(
+        node.op, (ast.UAdd, ast.USub)
+    ):
         value = _exponent(node.operand)
         if isinstance(node.op, ast.USub):
             value = -value
-        else:
-            raise ValueError("Use an integer exponent from -12 to 12.")
-        if abs(value) > MAX_EXPONENT:
-            raise ValueError("Use an integer exponent from -12 to 12.")
-        return value
+    else:
+        raise ValueError(
+            "Use an integer exponent from -12 to 12."
+        )
+    if abs(value) > MAX_EXPONENT:
+        raise ValueError(
+            "Use an integer exponent from -12 to 12."
+        )
+    return value
+# this was fixed by AI sadly I could not figure out the problem.
 def _read(node, depth=0):
     if depth > 16:
         raise ValueError("Expression is too complex.")
@@ -39,31 +47,34 @@ def _read(node, depth=0):
             base = _read(node.left, depth + 1)
             exponent = _exponent(node.right)
             if base.is_zero and exponent <= 0:
-                raise ValueError("Zero cannot have a nonpositive exponent.")
+                raise ValueError(
+                    "Zero cannot have a nonpositive exponent."
+                )
             return sp.Pow(base, exponent, evaluate=False)
-    left = _read(node.left, depth + 1)
-    right = _read(node.right, depth + 1)
-
-    if isinstance(node.op, ast.Mul):
-        return sp.Mul(left, right, evaluate=False)
-    if isinstance(node.op, ast.Div):
-        if right.is_zero:
-            raise ValueError("Cannot divide by zero.")
-        return sp.Mul(
-            left,
-            sp.Pow(right, -1, evaluate=False),
-            evaluate=False,
-        )
-    if isinstance(node.op, ast.Add):
-        return sp.Add(left, right, evaluate=False)
-    if isinstance(node.op, ast.Sub):
-        return sp.Add(
-            left,
-            sp.Mul(-1, right, evaluate=False),
-            evaluate=False,
-        )
-    raise ValueError("Use numbers, letters, parentheses and integer powers only.")
-
+        left = _read(node.left, depth + 1)
+        right = _read(node.right, depth + 1)
+        if isinstance(node.op, ast.Mult):
+            return sp.Mul(left, right, evaluate=False)
+        if isinstance(node.op, ast.Div):
+            if right.is_zero or sp.simplify(right) == 0:
+                raise ValueError("Cannot divide by zero.")
+            return sp.Mul(
+                left,
+                sp.Pow(right, -1, evaluate=False),
+                evaluate=False
+            )
+        if isinstance(node.op, ast.Add):
+            return sp.Add(left, right, evaluate=False)
+        if isinstance(node.op, ast.Sub):
+            return sp.Add(
+                left,
+                sp.Mul(-1, right, evaluate=False),
+                evaluate=False
+            )
+    raise ValueError(
+        "Use numbers, letters, parentheses and integer powers only."
+    )
+# Again fixed by gpt sol 6.2 ^^^^^  Apparently I cannot write code still edited it a bit.
 def _power_latex(base, exponent):
     text = sp.latex(base)
     if not base.is_Atom or base.is_negative:
@@ -117,7 +128,7 @@ def solve_powers(expression):
 
     if (
         isinstance(node, ast.BinOp)
-        and isinstance(node.op, (ast.Mul, ast.Div))
+        and isinstance(node.op, (ast.Mult, ast.Div)) # This was a simple fix I wrote mul instead of Mult
     ):
          left_info = _power_info(node.left)
          right_info = _power_info(node.right)
